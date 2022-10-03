@@ -11,9 +11,15 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
     "ejs": "^3.1.5",
     "express": "^4.15.2",
-    "firebase": "^9.10.0"
+    "firebase": "^9.10.0",
+    "firebase-admin": "^11.0.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-http": "^0.3.0"
   },
   "devDependencies": {
     "got": "^11.3.0",
