@@ -119,7 +119,7 @@ exports.setupAuthentication = (app) => {
     }));
     app.use(passport.initialize());
     app.use(passport.session());
-
+    console.log(7)
     if (localOnly) {
         // use simple login info for testing
         app.get('/api/auth/login', passport.authenticate('basic'), (req, res) => {
