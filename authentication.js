@@ -128,6 +128,7 @@ exports.setupAuthentication = (app) => {
             res.redirect('/');
         });
     } else {
+        console.log(9)
         // use complex OAuth protocol that requires redirection to outside login screen
         app.get('/api/auth/google/redirect', passport.authenticate('google'), async (req, res) => {
             await DataStore.newUser(req.user.id,req.user.displayName)
