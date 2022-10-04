@@ -121,6 +121,7 @@ exports.setupAuthentication = (app) => {
     app.use(passport.session());
     console.log(7)
     if (localOnly) {
+        console.log(8)
         // use simple login info for testing
         app.get('/api/auth/login', passport.authenticate('basic'), (req, res) => {
             //console.log(localOnlyWithGoogleAuth)
