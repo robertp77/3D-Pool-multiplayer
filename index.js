@@ -8,7 +8,7 @@ const { OAUTH } = require('./secrets.js');
 const cors = require('cors');
 const DataStore = require('./DataStore.js');
 const corsGitlab = cors({
-  origin: 'https://compsci290_2021spring.dukecs.io',
+  origin: 'https://young-escarpment-72389.herokuapp.com/',
   credentials: true,
 });
 app.use(corsGitlab);
