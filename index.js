@@ -3,8 +3,6 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const auth = require('./authentication.js');
 const app=express()
-auth.setupAuthentication(app);
-const { OAUTH } = require('./secrets.js');
 const cors = require('cors');
 const DataStore = require('./DataStore.js');
 const corsGitlab = cors({
@@ -12,6 +10,8 @@ const corsGitlab = cors({
   credentials: true,
 });
 app.use(corsGitlab);
+auth.setupAuthentication(app);
+const { OAUTH } = require('./secrets.js');
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
