@@ -106,7 +106,6 @@ exports.setupAuthentication = (app) => {
     app.use(corsGitlab);
 
     // use Cookies to send session info back and forth
-    /*
     app.use(cookieSession({
         // milliseconds of a day
         maxAge: 24 * 60 * 60 * 1000,
@@ -114,11 +113,10 @@ exports.setupAuthentication = (app) => {
         keys: [COOKIE_ENCRYPTION_KEY],
         ...((localOnly || localOnlyWithGoogleAuth) ? {} : {
             // needed because server is on Heroku and frontend is on GitLab
-            sameSite: 'none',
+            sameSite: true,
             secure: true,
         }),
     }));
-    */
     app.use(passport.initialize());
     app.use(passport.session());
     if (localOnly) {
