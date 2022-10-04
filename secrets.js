@@ -11,7 +11,8 @@ exports.FIREBASE_CONFIG = {
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bpubd%40dpool-e2d7a.iam.gserviceaccount.com"
 };
 exports.COOKIE_ENCRYPTION_KEY = 'SECRET';
-exports.OAUTH = {"web":{"client_id":"637598835406-9eckmrd8penj2ter5er0n2k461mgdft8.apps.googleusercontent.com","project_id":"dpool-e2d7a","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","redirect_uris":["https://young-escarpment-72389.herokuapp.com/api/auth/google/redirect"]}};
+//exports.OAUTH = {"web":{"client_id":"637598835406-9eckmrd8penj2ter5er0n2k461mgdft8.apps.googleusercontent.com","project_id":"dpool-e2d7a","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","redirect_uris":["https://young-escarpment-72389.herokuapp.com/api/auth/google/redirect"]}};
+exports.OAUTH ={"web":{"client_id":"90867884805-5akp1mqp3rp0mrl0ktp10fjgkr4vv60s.apps.googleusercontent.com","project_id":"prefab-groove-364518","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","redirect_uris":["https://young-escarpment-72389.herokuapp.com/api/auth/google/redirect"]}}//,"javascript_origins":["https://young-escarpment-72389.herokuapp.com"]}}
 exports.DEPLOYED_URLS = {
   // TODO: change to Heroku and GitLab URLs, with a trailing slash
   SERVER: 'https://young-escarpment-72389.herokuapp.com/',
