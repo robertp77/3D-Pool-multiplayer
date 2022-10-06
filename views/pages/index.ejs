@@ -2,7 +2,6 @@
 <div id="app">
     <a href="https://young-escarpment-72389.herokuapp.com/api/auth/login">Login</a><br>
     <a href="https://young-escarpment-72389.herokuapp.com/api/auth/logout">Logout</a><br>
-    <button id="change" onclick=newgame(true)>Play</button>
 </div>
 <div id="glowscript" class="glowscript">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -347,6 +346,10 @@
         ball13 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({color: color.blue, radius: r, make_trail: false, retain: 200})]);
         "167";
         yourturn=true
+        RS_interpolate_kwargs.call(this, button, [RS_desugar_kwargs({text: "play", bind: newogame})]);
+        async function newogame(){
+            newgame(true)
+        }
         async function newgame() {
             var online = (arguments[0] === undefined || ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [RS_kwargs_symbol] === true)) ? newgame.__defaults__.online : arguments[0];
             var RS_kwargs_obj = arguments[arguments.length["-"](1)];
