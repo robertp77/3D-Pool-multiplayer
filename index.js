@@ -24,11 +24,11 @@ app.get('/api/findmatch',
     });
 app.get('/api/getobs',
     async (req, res) => {
-        await DataStore.getobs(req.query.opp)
-        //res.json(lat);
+        let obs=await DataStore.getobs(req.query.opp)
+        res.json(obs);
     });
 app.get('/api/sendobs',
     async (req, res) => {
-        await DataStore.getobs(req.user?.id,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.gx,req.query.gy,req.query.gz,req.query.ax,req.query.ay,req.query.az)
+        await DataStore.sendobs(req.user?.id,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz)
         //res.json(lat);
     });
