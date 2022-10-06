@@ -19,8 +19,8 @@ app.get('/', (req, res) => res.render('pages/index'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.get('/api/findmatch',
     async (req, res) => {
-        await DataStore.findmatch(req.user?.id,first=true)
-        //res.json(lat);
+        let opp,turn=await DataStore.findmatch(req.user?.id,first=true)
+        res.json(opp,turn);
     });
 app.get('/api/getobs',
     async (req, res) => {

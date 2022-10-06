@@ -87,6 +87,7 @@ module.exports = {
             await this.dataRef.child('0/lobby/0').child(`${name}/0`).set(name)
         }
         let data=await this.dataRef.child('0/lobby').once('value')
+        data=data.val()
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
             if(Object.values(data[0])[i]!=name){
