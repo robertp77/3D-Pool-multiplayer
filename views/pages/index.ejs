@@ -348,6 +348,10 @@
         "167";
         yourturn=false
         RS_interpolate_kwargs.call(this, button, [RS_desugar_kwargs({text: "play", bind: newogame})]);
+        async function findmatch(){
+            const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
+            return response.json()
+        }
         async function newogame(){
             newgame(true)
         }
@@ -360,12 +364,11 @@
             }
             if(online){
                 online2=true
-                const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
-                const vals=response.json()
+                const vals=await findmatch()
                 console.log(9)
                 console.log(vals)
                 console.log(Object.values(vals))
-                //console.log(vals.opp)
+                console.log(vals.turn)
                 //yourturn=turn
             }
             var RS_ls, qwe, n, nn, nnn, q;
