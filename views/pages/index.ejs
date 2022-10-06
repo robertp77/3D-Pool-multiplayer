@@ -346,6 +346,7 @@
         "166";
         ball13 = RS_interpolate_kwargs.call(this, sphere, [RS_desugar_kwargs({color: color.blue, radius: r, make_trail: false, retain: 200})]);
         "167";
+        yourturn=true
         async function newgame() {
             var online = (arguments[0] === undefined || ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [RS_kwargs_symbol] === true)) ? newgame.__defaults__.online : arguments[0];
             var RS_kwargs_obj = arguments[arguments.length["-"](1)];
@@ -355,9 +356,11 @@
             }
             if(online){
                 online2=true
-                var opponent, turn=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
+                const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
+                var vals=response.json()
+                console.log(vals)
+                yourturn=turn
             }
-            yourturn=turn
             var RS_ls, qwe, n, nn, nnn, q;
             "168";
             ball0.pos = vector(0, 0, 0);
@@ -8704,7 +8707,7 @@
             Ttt.height = freeview.radius["*"](1.33);
             "4195";
             Ttt.depth = Ttt.height["*"](.2);
-            if(yourturn){
+            if(online2 && yourturn){
                 if(turn==1){
                     await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'pay='+pointer.axis.y+'paz='+pointer.axis.z+'bpx='+ball.p.x+'bpy='+ball.p.y+'bpz='+ball.p.z+'wx='+wormvector.x+'wy='+wormvector.y+'wz='+wormvector.z+'ax='+aimball.pos.x+'ay='+aimball.pos.y+'az='+aimball.pos.z+'gx='+gravityball.pos.x+'gy='+gravityball.pos.y+'gz='+gravityball.pos.z,{ credentials: 'include'})
                 }
