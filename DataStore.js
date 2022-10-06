@@ -59,8 +59,8 @@ module.exports = {
         this.dataRef.child('0/Location36n79/0').child(`${name}/0/requested`).set("False")
     },
     async newUser(id,name){
-        this.dataRef.child('0/Location36n79/0').child(`${id}/0/name`).set(`${id}`)
-        this.dataRef.child('0/Location36n79/0').child(`${id}/0/acname`).set(`${name}`)
+        this.dataRef.child('0').child(`${id}/0/name`).set(`${id}`)
+        this.dataRef.child('0').child(`${id}/0/acname`).set(`${name}`)
     },
     async sendride(name,requestedpickuplong,requestedpickuplat,requesteddropofflong,requesteddropofflat){
         await this.dataRef.child('0/Location36n79/0').child(`${name}/0/requestedpickuplong`).set(requestedpickuplong)
@@ -81,5 +81,50 @@ module.exports = {
     async grabscore(name){
         let snap=await this.dataRef.child('0/Location36n79/0').child(`${name}/0/score`).once('value')
         return snap.val()
+    },
+    async findmatch(name,first=false){
+        if(first){
+            await this.dataRef.child('0/lobby/0').child(`${name}/0`).set(name)
+        }
+        let data=await this.dataRef.child('0/lobby').once('value')
+        var turn=false
+        for(let i=0;i<Object.values(data[0]).length;i++){
+            if(Object.values(data[0])[i]!=name){
+                return Object.values(data[0])[i],turn
+            }
+            else{
+                turn=true
+            }
+        }
+        await this.findmatch(name)
+    },
+    async getobs(opp){
+        let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).once('value')
+        let pay=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pay`).once('value')
+        let paz=await this.dataRef.child('0/lobby/0').child(`${opp}/0/paz`).once('value')
+        let wx=await this.dataRef.child('0/lobby/0').child(`${opp}/0/wx`).once('value')
+        let wy=await this.dataRef.child('0/lobby/0').child(`${opp}/0/wy`).once('value')
+        let wz=await this.dataRef.child('0/lobby/0').child(`${opp}/0/wz`).once('value')
+        let ax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/ax`).once('value')
+        let ay=await this.dataRef.child('0/lobby/0').child(`${opp}/0/ay`).once('value')
+        let az=await this.dataRef.child('0/lobby/0').child(`${opp}/0/az`).once('value')
+        let gx=await this.dataRef.child('0/lobby/0').child(`${opp}/0/gx`).once('value')
+        let gy=await this.dataRef.child('0/lobby/0').child(`${opp}/0/gy`).once('value')
+        let gz=await this.dataRef.child('0/lobby/0').child(`${opp}/0/gz`).once('value')
+        return pax.val(),pay.val(),paz.val(),wx.val(),wy.val(),wz.val(),ax.val(),ay.val(),az.val(),gx.val(),gy.val(),gz.val()
+    },
+    async sendobs(opp,pax,pay,paz,wx,wy,wz,ax,ay,az,gx,gy,gz){
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).set(pax)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/pay`).set(pay)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/paz`).set(paz)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/wx`).set(wx)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/wy`).set(wy)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/wz`).set(wz)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/ax`).set(ax)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/ay`).set(ay)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/az`).set(az)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/gx`).set(gx)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/gy`).set(gy)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/0/gz`).set(gz)
     }
 }
