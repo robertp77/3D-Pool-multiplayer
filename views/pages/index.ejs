@@ -1631,6 +1631,7 @@
                 "747";
                 if ((ev.event === "mouseup" || typeof ev.event === "object" && RS_equals(ev.event, "mouseup"))) {
                     "748";
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot&ar='+true,{ credentials: 'include'})
                     (await shoot());
                 }
             }
@@ -3346,45 +3347,6 @@
                     }
                     if (RS_equals(x, len(vels)["-"](1)) || time[">"](1500)) {
                         "1510";
-                        if(online2==false || yourturn==false){
-                            scene.bind("mousemove", aim);
-                            scene.bind("mousedown", reff);
-                            scene.bind("click", grav);
-                            scene.bind("mousemove", point);
-                            yourturn=true
-                        }
-                        else{
-                            scene.unbind("mousemove", aim);
-                            scene.unbind("mousedown", reff);
-                            scene.unbind("click", grav);
-                            scene.unbind("mousemove", point);
-                            yourturn=false
-                            while(true){
-                                let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
-                                pointer.axis.x=pax
-                                pointer.axis.y=pay
-                                pointer.axis.z=paz
-                                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-                                aimball.pos.x=ax
-                                aimball.pos.y=ay
-                                aimball.pos.z=az
-                                gravityball.pos.x=gx
-                                gravityball.pos.y=gy
-                                gravityball.pos.z=gz
-                                if(turn==1){
-                                    wormvector.x=wx
-                                    wormvector.y=wy
-                                    wormvector.z=wz
-                                }
-                                else{
-                                    wormvectorr.x=wx
-                                    wormvectorr.y=wy
-                                    wormvectorr.z=wz
-                                }
-                                if(shot==true){
-                                    await shoot()
-                                }
-                        }
                         "1511";
                         print(time);
                         "1512";
@@ -3847,6 +3809,48 @@
                         "1737";
                         break;
                         "1738";
+                        if(online2==false || yourturn==false){
+                            scene.bind("mousemove", aim);
+                            scene.bind("mousedown", reff);
+                            scene.bind("click", grav);
+                            scene.bind("mousemove", point);
+                            yourturn=true
+                        }
+                        else{
+                            scene.unbind("mousemove", aim);
+                            scene.unbind("mousedown", reff);
+                            scene.unbind("click", grav);
+                            scene.unbind("mousemove", point);
+                            yourturn=false
+                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot&ar='+false,{ credentials: 'include'})
+                            while(true){
+                                let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
+                                pointer.axis.x=pax
+                                pointer.axis.y=pay
+                                pointer.axis.z=paz
+                                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
+                                aimball.pos.x=ax
+                                aimball.pos.y=ay
+                                aimball.pos.z=az
+                                gravityball.pos.x=gx
+                                gravityball.pos.y=gy
+                                gravityball.pos.z=gz
+                                if(turn==1){
+                                    wormvector.x=wx
+                                    wormvector.y=wy
+                                    wormvector.z=wz
+                                }
+                                else{
+                                    wormvectorr.x=wx
+                                    wormvectorr.y=wy
+                                    wormvectorr.z=wz
+                                }
+                                if(shot==true){
+                                    await shoot()
+                                    break
+                                }
+                            }
+                        }
                     }
                 }
                 if (mag(ball.pos["-"](aimball.pos))["<"](15["*"](dt)) && (touchedaim === 0 || typeof touchedaim === "object" && RS_equals(touchedaim, 0)) && (touchedgrav === 0 || typeof touchedgrav === "object" && RS_equals(touchedgrav, 0))) {
@@ -8721,7 +8725,7 @@
         __module__ : {value: "__main__"}
     });
     
-    ;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })()
+    ;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
     // END JAVASCRIPT
     
     //--><!]]></script>

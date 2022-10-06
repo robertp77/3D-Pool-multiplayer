@@ -22,6 +22,10 @@ app.get('/api/findmatch',
         let opp,turn=await DataStore.findmatch(req.user?.id,first=true)
         res.json(opp,turn);
     });
+app.get('/api/sendshot',
+    async (req, res) => {
+        await DataStore.sendshot(req.user?.id,req.query.ar)
+    });
 app.get('/api/getobs',
     async (req, res) => {
         let obs=await DataStore.getobs(req.query.opp)
