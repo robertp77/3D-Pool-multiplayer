@@ -8715,6 +8715,7 @@
             Ttt.height = freeview.radius["*"](1.33);
             "4195";
             Ttt.depth = Ttt.height["*"](.2);
+            console.log(yourturn)
             if(online2 && yourturn){
                 if(turn==1){
                     await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'pay='+pointer.axis.y+'paz='+pointer.axis.z+'wx='+wormvector.x+'wy='+wormvector.y+'wz='+wormvector.z+'ax='+aimball.pos.x+'ay='+aimball.pos.y+'az='+aimball.pos.z+'gx='+gravityball.pos.x+'gy='+gravityball.pos.y+'gz='+gravityball.pos.z,{ credentials: 'include'})
