@@ -367,8 +367,10 @@
                 const vals=await findmatch()
                 console.log(9)
                 console.log(vals)
-                console.log(Object.values(vals))
-                console.log(vals.turn)
+                while(vals.opp==null){
+                    const vals=await findmatch()
+                    console.log(vals)
+                }
                 //yourturn=turn
             }
             var RS_ls, qwe, n, nn, nnn, q;

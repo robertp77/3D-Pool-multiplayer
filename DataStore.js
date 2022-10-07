@@ -91,14 +91,14 @@ module.exports = {
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
             console.log(Object.values(data[0])[i])
-            if(Object.values(data[0])[i]!=name){
-                return Object.values(data[0])[i],turn
+            if(Object.values(data[0])[i][0]!=name){
+                return Object.values(data[0])[i][0],turn
             }
             else{
                 turn=true
             }
         }
-        return await this.findmatch(name)
+        return null,turn
     },
     async getobs(opp){
         let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).once('value')
