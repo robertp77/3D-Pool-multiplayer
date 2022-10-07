@@ -95,11 +95,11 @@ module.exports = {
             const t=Object.keys(data[0])[i]
             console.log(t)
             console.log(name)
-            var opp=Object.values(data[0])[i][0]
-            const opp2=opp
+            //var opp=Object.values(data[0])[i][0]
+            //const opp2=opp
             if(Object.values(data[0])[i][0]!=name){
-                console.log(opp2)
-                return opp2,turn
+                //console.log(opp2)
+                return t,turn
             }
             else{
                 turn=true
