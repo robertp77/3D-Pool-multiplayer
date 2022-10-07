@@ -370,7 +370,7 @@
                 online2=true
                 const data=await findmatch()
                 console.log(data)
-                while(data.opp==null){
+                while(data==null){
                     const data=await findmatch()
                 }
                 opponent=data.opp

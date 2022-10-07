@@ -84,28 +84,27 @@ module.exports = {
     },
     async findmatch(name,first=false){
         if(first){
-            await this.dataRef.child('0/lobby/0').child(`${name}/0`).set(name)
+            await this.dataRef.child('0/lobby/0').child(`${name}/name`).set(name)
         }
         let data=await this.dataRef.child('0/lobby').once('value')
         //return data.val()
         data=data.val()
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
-            console.log(Object.values(data[0])[i][0])
-            const t=Object.keys(data[0])[i]
-            console.log(t)
+            console.log(Object.values(data[0])[i].name)
             console.log(name)
-            //var opp=Object.values(data[0])[i][0]
-            //const opp2=opp
-            if(Object.values(data[0])[i][0]!=name){
-                //console.log(opp2)
-                return t,turn
+            if(Object.values(data[0])[i].name!=name){
+                let ret=await this.dataRef.child('0/lobby/0').child(`${t}`).once('value')
+                ret=ret.val()
+                ret.turn=turn
+                console.log(ret)
+                return ret
             }
             else{
                 turn=true
             }
         }
-        return null,turn
+        return null
     },
     async getobs(opp){
         let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).once('value')
