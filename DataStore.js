@@ -91,6 +91,8 @@ module.exports = {
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
             console.log(Object.values(data[0])[i][0])
+            console.log(name)
+            console.log(Object.values(data[0])[i][0]!=name)
             if(Object.values(data[0])[i][0]!=name){
                 return Object.values(data[0])[i][0],turn
             }
