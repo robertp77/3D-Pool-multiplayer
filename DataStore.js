@@ -98,7 +98,7 @@ module.exports = {
                 turn=true
             }
         }
-        await this.findmatch(name)
+        return await this.findmatch(name)
     },
     async getobs(opp){
         let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).once('value')
