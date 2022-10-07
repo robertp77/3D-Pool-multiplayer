@@ -20,6 +20,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.get('/api/findmatch',
     async (req, res) => {
         let opp,turn=await DataStore.findmatch(req.user?.id,first=true)
+        console.log(opp)
         res.status(200).json({'opp': opp,'turn': turn});
     });
 app.get('/api/findname',
