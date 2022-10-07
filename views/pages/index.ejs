@@ -352,6 +352,10 @@
             const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
             return response.json()
         }
+        async function findname(){
+            const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findname',{ credentials: 'include'})
+            return response.json()
+        }
         async function newogame(){
             newgame(true)
         }
@@ -364,13 +368,29 @@
             }
             if(online){
                 online2=true
-                const vals=await findmatch()
-                console.log(9)
-                console.log(vals)
-                while(vals.opp==null){
-                    const vals=await findmatch()
-                    //console.log(vals)
+                const data=await findmatch()
+                console.log(data)
+                while(data.opp==null){
+                    const data=await findmatch()
                 }
+                /*
+                const data=await findmatch()
+                const name=await findname()
+                var turn=false
+                for(let i=0;i<Object.values(data[0]).length;i++){
+                    console.log(Object.values(data[0])[i][0])
+                    console.log(name)
+                    //const opp=Object.values(data[0])[i][0]
+                    if(Object.values(data[0])[i][0]!=req.user?.id){
+                        console.log(opp)
+                        return Object.values(data[0])[i][0],turn
+                    }
+                    else{
+                        turn=true
+                    }
+                }
+                return null,turn
+                */
                 console.log(8)
                 //yourturn=turn
             }

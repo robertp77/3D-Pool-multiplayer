@@ -87,12 +87,13 @@ module.exports = {
             await this.dataRef.child('0/lobby/0').child(`${name}/0`).set(name)
         }
         let data=await this.dataRef.child('0/lobby').once('value')
+        //return data.val()
         data=data.val()
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
             console.log(Object.values(data[0])[i][0])
             console.log(name)
-            const opp=Object.values(data[0])[i][0]
+            var opp=Object.values(data[0])[i][0]
             if(Object.values(data[0])[i][0]!=name){
                 console.log(opp)
                 return opp,turn
