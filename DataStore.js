@@ -92,6 +92,8 @@ module.exports = {
         var turn=false
         for(let i=0;i<Object.values(data[0]).length;i++){
             console.log(Object.values(data[0])[i].name)
+            const t=Object.keys(data[0])[i]
+            console.log(t)
             console.log(name)
             if(Object.values(data[0])[i].name!=name){
                 let ret=await this.dataRef.child('0/lobby/0').child(`${t}`).once('value')
