@@ -381,7 +381,8 @@
                 console.log(data==null)
                 if(data==null){
                     turn=false
-                    while(data==null){
+                    const data=await checkopp(name)
+                    while(data.opp=='none'){
                         const data=await checkopp(name)
                     }
                     opponent=data.opp

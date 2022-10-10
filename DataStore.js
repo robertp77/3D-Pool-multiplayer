@@ -85,7 +85,7 @@ module.exports = {
     async findmatch(name){
         //if(first){
         await this.dataRef.child('0/lobby/0').child(`${name}/name`).set(name)
-        await this.dataRef.child('0/lobby/0').child(`${name}/opp`).set(null)
+        await this.dataRef.child('0/lobby/0').child(`${name}/opp`).set('none')
         //}
         let data=await this.dataRef.child('0/lobby').once('value')
         //return data.val()
