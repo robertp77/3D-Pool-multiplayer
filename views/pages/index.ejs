@@ -356,8 +356,8 @@
             const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findname',{ credentials: 'include'})
             return response.json()
         }
-        async function checkopp(){
-            const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/checkopp',{ credentials: 'include'})
+        async function checkopp(name){
+            const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/checkopp&name='+name)
             return response.json()
         }
         async function newogame(){
@@ -374,13 +374,15 @@
             if(online){
                 online2=true
                 turn=true
+                const name=findname()
+                console.log(name)
                 const data=await findmatch()
                 console.log(data)
                 console.log(data==null)
                 if(data==null){
                     turn=false
                     while(data==null){
-                        const data=await checkopp()
+                        const data=await checkopp(name)
                     }
                     opponent=data.opp
                 }
