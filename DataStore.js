@@ -111,7 +111,7 @@ module.exports = {
         return null
     },
     async checkopp(name){
-        let ans=await this.dataRef.child('0/lobby/0').child(`${name}`).once('value')
+        let ans=await this.dataRef.child('0/lobby/0').child(`${name}/opp`).once('value')
         return ans.val()
     },
     async getobs(opp){
