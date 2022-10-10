@@ -377,11 +377,16 @@
                 const data=await findmatch()
                 console.log(data)
                 console.log(data==null)
-                while(data==null){
+                if(data==null){
                     turn=false
-                    const data=await checkopp()
+                    while(data==null){
+                        const data=await checkopp()
+                    }
+                    opponent=data.opp
                 }
-                opponent=data
+                else{
+                    opponent=data.name
+                }
                 //turn=data.turn
                 /*
                 const data=await findmatch()

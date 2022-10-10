@@ -98,7 +98,7 @@ module.exports = {
             console.log(name)
             if(Object.values(data[0])[i].name!=name){
                 let ret=await this.dataRef.child('0/lobby/0').child(`${t}`).once('value')
-                await this.dataRef.child('0/lobby/0').child(`${Object.values(data[0])[i].name}/opp`).set(name)
+                await this.dataRef.child('0/lobby/0').child(`${t}/opp`).set(name)
                 ret=ret.val()
                 ret.turn=turn
                 console.log(ret)
@@ -111,7 +111,7 @@ module.exports = {
         return null
     },
     async checkopp(name){
-        let ans=await this.dataRef.child('0/lobby/0').child(`${name}/opp`).once('value')
+        let ans=await this.dataRef.child('0/lobby/0').child(`${name}`).once('value')
         return ans.val()
     },
     async getobs(opp){
