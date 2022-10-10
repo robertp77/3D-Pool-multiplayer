@@ -383,6 +383,7 @@
                     turn=false
                     const data=await checkopp(name)
                     while(data.opp=='none'){
+                        console.log(data)
                         const data=await checkopp(name)
                     }
                     opponent=data.opp
