@@ -359,6 +359,7 @@
         async function newogame(){
             newgame(true)
         }
+        gaurav = Math.pow((4["*"](r["**"](2))["-"](2["*"](r["**"](2)))), .5);
         async function newgame() {
             var online = (arguments[0] === undefined || ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [RS_kwargs_symbol] === true)) ? newgame.__defaults__.online : arguments[0];
             var RS_kwargs_obj = arguments[arguments.length["-"](1)];
@@ -427,9 +428,37 @@
             ball13.pos = vector(0, 0, 0);
             "182";
             ball.pos = vector(0, 0, side);
+            ball0.pos = vector(0, 0, side["-u"]()["*"](.75));
+            "189";
+            ball1.pos = ball0.pos["+"](vector(r, r, gaurav["-u"]()));
+            "190";
+            ball2.pos = ball0.pos["+"](vector(r, r["-u"](), gaurav["-u"]()));
+            "191";
+            ball3.pos = ball0.pos["+"](vector(r["-u"](), r, gaurav["-u"]()));
+            "192";
+            ball4.pos = ball0.pos["+"](vector(r["-u"](), r["-u"](), gaurav["-u"]()));
+            "193";
+            ball5.pos = ball1.pos["+"](vector(r, r, gaurav["-u"]()));
+            "194";
+            ball6.pos = ball1.pos["+"](vector(r, r["-u"](), gaurav["-u"]()));
+            "195";
+            ball7.pos = ball1.pos["+"](vector(r["-u"](), r, gaurav["-u"]()));
+            "196";
+            ball8.pos = ball1.pos["+"](vector(r["-u"](), r["-u"](), gaurav["-u"]()));
+            "197";
+            ball9.pos = ball3.pos["+"](vector(r["-u"](), r["-u"](), gaurav["-u"]()));
+            "198";
+            ball10.pos = ball3.pos["+"](vector(r["-u"](), r, gaurav["-u"]()));
+            "199";
+            ball11.pos = ball2.pos["+"](vector(r["-u"](), r["-u"](), gaurav["-u"]()));
+            "200";
+            ball12.pos = ball2.pos["+"](vector(r, r["-u"](), gaurav["-u"]()));
+            "201";
+            ball13.pos = ball4.pos["+"](vector(r["-u"](), r["-u"](), gaurav["-u"]()));
             "183";
             balls = RS_list_decorate([ ball0.pos, ball1.pos, ball2.pos, ball3.pos, ball4.pos, ball5.pos, ball6.pos, ball7.pos, ball8.pos, ball9.pos, ball10.pos, ball11.pos, ball12.pos, ball13.pos, ball.pos ]);
             "184";
+            /*
             ball4.pos = vector(side["-u"]()["+"](r)["+"](random()["*"](2["*"](side)["-"](2["*"](r)))), side["-u"]()["+"](r)["+"](random()["*"](2["*"](side)["-"](2["*"](r)))), 4["-u"]()["+"](2["*"](r))["+"](random()["*"](8["-"](2["*"](r)))));
             "185";
             balls[4] = ball4.pos;
@@ -746,6 +775,7 @@
             ball13.pos = balls[13];
             "332";
             balls[14] = ball.pos;
+            */
         };
         if (!newgame.__defaults__) Object.defineProperties(newgame, {
             __defaults__ : {value: {online:false}},
