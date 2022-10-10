@@ -23,7 +23,7 @@ app.get('/api/findmatch',
         console.log(ret)
         res.status(200).json(ret);
     });
-app.get('/api/findmatch',
+app.get('/api/checkopp',
     async (req, res) => {
         var ret=await DataStore.checkopp(req.user?.id)
         console.log(ret)
