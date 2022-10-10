@@ -82,10 +82,11 @@ module.exports = {
         let snap=await this.dataRef.child('0/Location36n79/0').child(`${name}/0/score`).once('value')
         return snap.val()
     },
-    async findmatch(name,first=false){
-        if(first){
-            await this.dataRef.child('0/lobby/0').child(`${name}/name`).set(name)
-        }
+    async findmatch(name){
+        //if(first){
+        await this.dataRef.child('0/lobby/0').child(`${name}/name`).set(name)
+        await this.dataRef.child('0/lobby/0').child(`${name}/opp`).set(null)
+        //}
         let data=await this.dataRef.child('0/lobby').once('value')
         //return data.val()
         data=data.val()
@@ -97,6 +98,7 @@ module.exports = {
             console.log(name)
             if(Object.values(data[0])[i].name!=name){
                 let ret=await this.dataRef.child('0/lobby/0').child(`${t}`).once('value')
+                await this.dataRef.child('0/lobby/0').child(`${Object.values(data[0])[i].name}/opp`).set(name)
                 ret=ret.val()
                 ret.turn=turn
                 console.log(ret)
@@ -107,6 +109,10 @@ module.exports = {
             }
         }
         return null
+    },
+    async checkopp(name){
+        let ans=await this.dataRef.child('0/lobby/0').child(`${name}/opp`).once('value')
+        return ans.val()
     },
     async getobs(opp){
         let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/0/pax`).once('value')

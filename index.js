@@ -19,7 +19,13 @@ app.get('/', (req, res) => res.render('pages/index'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.get('/api/findmatch',
     async (req, res) => {
-        var ret=await DataStore.findmatch(req.user?.id,first=true)
+        var ret=await DataStore.findmatch(req.user?.id)
+        console.log(ret)
+        res.status(200).json(ret);
+    });
+app.get('/api/findmatch',
+    async (req, res) => {
+        var ret=await DataStore.checkopp(req.user?.id)
         console.log(ret)
         res.status(200).json(ret);
     });
