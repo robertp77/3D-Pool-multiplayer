@@ -1530,7 +1530,7 @@
                             qwe = 1;
                         }
                     }
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendg?gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
+                    fetch('https://young-escarpment-72389.herokuapp.com/api/sendg?gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
                 }
             }
         };
@@ -1592,7 +1592,7 @@
                     ball.p = mag(ball.p)["*"](scene.camera.axis["/"](mag(scene.camera.axis)));
                     "685";
                     pointer.axis = ball.p["/"](mag(ball.p))["*"](9);
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
+                    fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
                     "686";
                     scene.camera.pos = scene.center["-"](scene.camera.axis);
                     "687";
@@ -1699,7 +1699,7 @@
                     }
                 }
             }
-            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
+            fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
         };
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
