@@ -50,3 +50,28 @@ app.get('/api/sendobs',
         await DataStore.sendobs(req.user?.id,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz)
         //res.json(lat);
     });
+app.get('/api/sendaim',
+    async (req, res) => {
+        await DataStore.sendaim(req.user?.id,req.query.pax,req.query.pay,req.query.paz)
+        //res.json(lat);
+    });
+app.get('/api/sendaim2',
+    async (req, res) => {
+        await DataStore.sendaim2(req.user?.id,req.query.ax,req.query.ay,req.query.az)
+        //res.json(lat);
+    });
+app.get('/api/sende',
+    async (req, res) => {
+        await DataStore.sendw(req.user?.id,req.query.ex,req.query.ey,req.query.ez,req.query.esx,req.query.esy,req.query.esz)
+        //res.json(lat);
+    });
+app.get('/api/sendp',
+    async (req, res) => {
+        await DataStore.sendw(req.user?.id,req.query.px,req.query.py,req.query.pz)
+        //res.json(lat);
+    });
+app.get('/api/sendg',
+    async (req, res) => {
+        await DataStore.sendg(req.user?.id,req.query.gx,req.query.gy,req.query.gz)
+        //res.json(lat);
+    });

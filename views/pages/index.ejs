@@ -363,6 +363,86 @@
         async function newogame(){
             newgame(true)
         }
+        async function freevu(){
+            scene.unbind("mousemove", shotspeed);
+            "513";
+            scene.unbind("mousemove", setwormpower);
+            "514";
+            scene.unbind("mousemove", setwormpowerr);
+            "515";
+            scene.unbind("mousemove", aim);
+            "516";
+            scene.unbind("mousemove", point);
+            "517";
+            scene.bind("mousemove", veew);
+            "518";
+            aimball.visible = false;
+            "519";
+            nonsense = 3;
+            "520";
+            scene.camera.axis = mag(scene.camera.axis)["*"](norm(1["-u"]()["*"](gravityball.pos)));
+            "521";
+            scene.center = vector(0, 0, 0);
+            "522";
+            gravityball.visible = true;
+            "523";
+            gravp.visible = true;
+            "524";
+            Tt.visible = false;
+            "525";
+            Ttt.visible = true;
+            "526";
+            scene.up = ucroxshot["-u"]();
+            "527";
+            scene.range = rangee;
+            "528";
+            vu = 1;
+            "529";
+        }
+        async function foo(){
+            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
+            while(true){
+                let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
+                pointer.axis.x=pax
+                pointer.axis.y=pay
+                pointer.axis.z=paz
+                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
+                aimball.pos.x=ax
+                aimball.pos.y=ay
+                aimball.pos.z=az
+                gravityball.pos.x=gx
+                gravityball.pos.y=gy
+                gravityball.pos.z=gz
+                if(turn==1){
+                    pointer1.axis.x=wx
+                    pointer1.axis.y=wy
+                    pointer1.axis.z=wz
+                    entry.pos.x=ex
+                    entry.pos.y=ey
+                    entry.pos.z=ez
+                    entry.size.x=esx
+                    entry.size.y=esy
+                    entry.size.z=esz
+                    wormpower=mag(pointer1.axis)["/"](.2["/"](14))
+                }
+                else{
+                    pointer1.axis.x=wx
+                    pointer1.axis.y=wy
+                    pointer1.axis.z=wz
+                    exit.pos.x=ex
+                    exit.pos.y=ey
+                    exit.pos.z=ez
+                    exit.size.x=esx
+                    exit.size.y=esy
+                    exit.size.z=esz
+                    wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
+                }
+                if(shot==true){
+                    await shoot()
+                    //break
+                }
+            }
+        }
         gaurav = Math.pow((4["*"](r["**"](2))["-"](2["*"](r["**"](2)))), .5);
         async function newgame() {
             var online = (arguments[0] === undefined || ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [RS_kwargs_symbol] === true)) ? newgame.__defaults__.online : arguments[0];
@@ -1173,40 +1253,7 @@
                 "511";
                 if ((vu === 0 || typeof vu === "object" && RS_equals(vu, 0))) {
                     "512";
-                    scene.unbind("mousemove", shotspeed);
-                    "513";
-                    scene.unbind("mousemove", setwormpower);
-                    "514";
-                    scene.unbind("mousemove", setwormpowerr);
-                    "515";
-                    scene.unbind("mousemove", aim);
-                    "516";
-                    scene.unbind("mousemove", point);
-                    "517";
-                    scene.bind("mousemove", veew);
-                    "518";
-                    aimball.visible = false;
-                    "519";
-                    nonsense = 3;
-                    "520";
-                    scene.camera.axis = mag(scene.camera.axis)["*"](norm(1["-u"]()["*"](gravityball.pos)));
-                    "521";
-                    scene.center = vector(0, 0, 0);
-                    "522";
-                    gravityball.visible = true;
-                    "523";
-                    gravp.visible = true;
-                    "524";
-                    Tt.visible = false;
-                    "525";
-                    Ttt.visible = true;
-                    "526";
-                    scene.up = ucroxshot["-u"]();
-                    "527";
-                    scene.range = rangee;
-                    "528";
-                    vu = 1;
-                    "529";
+                    await freevu()
                 } else if ((peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
                     "530";
                     scene.unbind("mousemove", shotspeed);
@@ -1483,6 +1530,7 @@
                             qwe = 1;
                         }
                     }
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendg?gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
                 }
             }
         };
@@ -1544,6 +1592,7 @@
                     ball.p = mag(ball.p)["*"](scene.camera.axis["/"](mag(scene.camera.axis)));
                     "685";
                     pointer.axis = ball.p["/"](mag(ball.p))["*"](9);
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
                     "686";
                     scene.camera.pos = scene.center["-"](scene.camera.axis);
                     "687";
@@ -1650,6 +1699,7 @@
                     }
                 }
             }
+            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
         };
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
@@ -1660,6 +1710,10 @@
             "729";
             scene.bind("mousedown", reff);
             "730";
+        }
+        else{
+            await freevu();
+            await foo()
         }
         async function shotspeed() {
             var RS_ls, temp, ev;
@@ -1786,6 +1840,7 @@
                     "776";
                     pointer1.axis = vector(0, wormpower["*"](.2["/"](14)), 0);
                 }
+                await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer1.axis.x+'&py='+pointer1.axis.y+'&pz='+pointer1.axis.z,{ credentials: 'include'})
             }
         };
         if (!setwormpower.__module__) Object.defineProperties(setwormpower, {
@@ -1857,6 +1912,7 @@
                         "805";
                         pointer2.axis = vector(0, wormpowerr["*"](.2["/"](14)), 0);
                     }
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer2.axis.x+'&py='+pointer2.axis.y+'&pz='+pointer2.axis.z,{ credentials: 'include'})
                 }
             }
         };
@@ -3283,6 +3339,7 @@
                         (await wormholebottom());
                         "1435";
                     }
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z',{ credentials: 'include'})
                 } else {
                     "1436";
                     wormzz = gravityball.pos.z;
@@ -3320,6 +3377,7 @@
                         "1450";
                         (await wormholebottomexit());
                     }
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z',{ credentials: 'include'})
                 }
             }
         };
@@ -3403,7 +3461,7 @@
             "1500";
             while ((t !== 1 && (typeof t !== "object" || RS_not_equals(t, 1)))) {
                 "1501";
-                //(await rate(50));
+                (await rate(50));
                 "1502";
                 time=time["+"](1);
                 "1503";
@@ -3889,7 +3947,6 @@
                         "1736";
                         t1 = clock();
                         "1737";
-                        break;
                         "1738";
                         if(online2==false || yourturn==false){
                             scene.bind("mousemove", aim);
@@ -3904,35 +3961,9 @@
                             scene.unbind("click", grav);
                             scene.unbind("mousemove", point);
                             yourturn=false
-                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
-                            while(true){
-                                let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
-                                pointer.axis.x=pax
-                                pointer.axis.y=pay
-                                pointer.axis.z=paz
-                                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-                                aimball.pos.x=ax
-                                aimball.pos.y=ay
-                                aimball.pos.z=az
-                                gravityball.pos.x=gx
-                                gravityball.pos.y=gy
-                                gravityball.pos.z=gz
-                                if(turn==1){
-                                    wormvector.x=wx
-                                    wormvector.y=wy
-                                    wormvector.z=wz
-                                }
-                                else{
-                                    wormvectorr.x=wx
-                                    wormvectorr.y=wy
-                                    wormvectorr.z=wz
-                                }
-                                if(shot==true){
-                                    await shoot()
-                                    break
-                                }
-                            }
+                            return await foo()
                         }
+                        break;
                     }
                 }
                 if (mag(ball.pos["-"](aimball.pos))["<"](15["*"](dt)) && (touchedaim === 0 || typeof touchedaim === "object" && RS_equals(touchedaim, 0)) && (touchedgrav === 0 || typeof touchedgrav === "object" && RS_equals(touchedgrav, 0))) {
@@ -8327,7 +8358,7 @@
         "3994";
         while (true) {
             "3995";
-            //(await rate(50));
+            (await rate(50));
             "3996";
             var RS_Iter51 = range(0, len(walls));
             RS_Iter51 = ((typeof RS_Iter51[Symbol.iterator] === "function") ? (RS_Iter51 instanceof Map ? RS_Iter51.keys() : RS_Iter51) : Object.keys(RS_Iter51));

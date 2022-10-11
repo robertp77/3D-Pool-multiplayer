@@ -127,19 +127,39 @@ module.exports = {
         let gx=await this.dataRef.child('0/lobby/0').child(`${opp}/gx`).once('value')
         let gy=await this.dataRef.child('0/lobby/0').child(`${opp}/gy`).once('value')
         let gz=await this.dataRef.child('0/lobby/0').child(`${opp}/gz`).once('value')
+        let ex=await this.dataRef.child('0/lobby/0').child(`${opp}/ex`).once('value')
+        let ey=await this.dataRef.child('0/lobby/0').child(`${opp}/ey`).once('value')
+        let ez=await this.dataRef.child('0/lobby/0').child(`${opp}/ez`).once('value')
+        let esx=await this.dataRef.child('0/lobby/0').child(`${opp}/esx`).once('value')
+        let esy=await this.dataRef.child('0/lobby/0').child(`${opp}/esy`).once('value')
+        let esz=await this.dataRef.child('0/lobby/0').child(`${opp}/esz`).once('value')
         let shot=await this.dataRef.child('0/lobby/0').child(`${opp}/shot`).once('value')
-        return pax.val(),pay.val(),paz.val(),wx.val(),wy.val(),wz.val(),ax.val(),ay.val(),az.val(),gx.val(),gy.val(),gz.val(),shot.val()
+        return pax.val(),pay.val(),paz.val(),wx.val(),wy.val(),wz.val(),ax.val(),ay.val(),az.val(),gx.val(),gy.val(),gz.val(),ex.val(),ey.val(),ez.val(),esx.val(),esy.val(),esz.val(),shot.val()
     },
-    async sendobs(opp,pax,pay,paz,wx,wy,wz,ax,ay,az,gx,gy,gz){
+    async sendaim(opp,pax,pay,paz){
         await this.dataRef.child('0/lobby/0').child(`${opp}/pax`).set(pax)
         await this.dataRef.child('0/lobby/0').child(`${opp}/pay`).set(pay)
         await this.dataRef.child('0/lobby/0').child(`${opp}/paz`).set(paz)
-        await this.dataRef.child('0/lobby/0').child(`${opp}/wx`).set(wx)
-        await this.dataRef.child('0/lobby/0').child(`${opp}/wy`).set(wy)
-        await this.dataRef.child('0/lobby/0').child(`${opp}/wz`).set(wz)
+    },
+    async sendaim2(opp,ax,ay,az){
         await this.dataRef.child('0/lobby/0').child(`${opp}/ax`).set(ax)
         await this.dataRef.child('0/lobby/0').child(`${opp}/ay`).set(ay)
         await this.dataRef.child('0/lobby/0').child(`${opp}/az`).set(az)
+    },
+    async sende(opp,ex,ey,ez,esx,esy,esz){
+        await this.dataRef.child('0/lobby/0').child(`${opp}/ex`).set(ex)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/ey`).set(ey)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/ez`).set(ez)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/esx`).set(esx)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/esy`).set(esy)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/esz`).set(esz)
+    },
+    async sendp(opp,px,py,pz){
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wx`).set(px)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wy`).set(py)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wz`).set(pz)
+    },
+    async sendg(opp,gx,gy,gz){
         await this.dataRef.child('0/lobby/0').child(`${opp}/gx`).set(gx)
         await this.dataRef.child('0/lobby/0').child(`${opp}/gy`).set(gy)
         await this.dataRef.child('0/lobby/0').child(`${opp}/gz`).set(gz)
