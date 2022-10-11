@@ -399,6 +399,12 @@
             vu = 1;
             "529";
         }
+        async function process2(ev){
+            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
+        }
+        async function process3(ev){
+            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
+        }
         async function foo(){
             await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
             while(true){
@@ -1592,7 +1598,6 @@
                     ball.p = mag(ball.p)["*"](scene.camera.axis["/"](mag(scene.camera.axis)));
                     "685";
                     pointer.axis = ball.p["/"](mag(ball.p))["*"](9);
-                    fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
                     "686";
                     scene.camera.pos = scene.center["-"](scene.camera.axis);
                     "687";
@@ -1601,6 +1606,8 @@
                     ucroxaim = norm((await ucroxxaim.cross(scene.camera.axis)))["-u"]();
                     "689";
                     rang = scene.range;
+                    ev = (await scene.waitfor("mouseup"));
+                    await process2(ev)
                 }
             }
         };
@@ -1699,7 +1706,8 @@
                     }
                 }
             }
-            fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
+            ev = (await scene.waitfor("mouseup"));
+            await process3(ev)
         };
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
