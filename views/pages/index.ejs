@@ -1581,7 +1581,7 @@
                             qwe = 1;
                         }
                     }
-                    fetch('https://young-escarpment-72389.herokuapp.com/api/sendg?gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
+                    //fetch('https://young-escarpment-72389.herokuapp.com/api/sendg?gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
                 }
             }
         };
@@ -1651,8 +1651,8 @@
                     ucroxaim = norm((await ucroxxaim.cross(scene.camera.axis)))["-u"]();
                     "689";
                     rang = scene.range;
-                    ev = (await scene.waitfor("mouseup"));
-                    return process2(ev)
+                    //ev = (await scene.waitfor("mouseup"));
+                    //return process2(ev)
                 }
             }
         };
@@ -1751,8 +1751,8 @@
                     }
                 }
             }
-            ev = (await scene.waitfor("mouseup"));
-            return process3(ev)
+            //ev = (await scene.waitfor("mouseup"));
+            //return process3(ev)
         };
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
@@ -1893,7 +1893,7 @@
                     "776";
                     pointer1.axis = vector(0, wormpower["*"](.2["/"](14)), 0);
                 }
-                await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer1.axis.x+'&py='+pointer1.axis.y+'&pz='+pointer1.axis.z,{ credentials: 'include'})
+                //await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer1.axis.x+'&py='+pointer1.axis.y+'&pz='+pointer1.axis.z,{ credentials: 'include'})
             }
         };
         if (!setwormpower.__module__) Object.defineProperties(setwormpower, {
@@ -1965,7 +1965,7 @@
                         "805";
                         pointer2.axis = vector(0, wormpowerr["*"](.2["/"](14)), 0);
                     }
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer2.axis.x+'&py='+pointer2.axis.y+'&pz='+pointer2.axis.z,{ credentials: 'include'})
+                    //await fetch('https://young-escarpment-72389.herokuapp.com/api/sendp?px='+pointer2.axis.x+'&py='+pointer2.axis.y+'&pz='+pointer2.axis.z,{ credentials: 'include'})
                 }
             }
         };
@@ -3392,7 +3392,7 @@
                         (await wormholebottom());
                         "1435";
                     }
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z,{ credentials: 'include'})
+                    //await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z,{ credentials: 'include'})
                 } else {
                     "1436";
                     wormzz = gravityball.pos.z;
@@ -3430,7 +3430,7 @@
                         "1450";
                         (await wormholebottomexit());
                     }
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z,{ credentials: 'include'})
+                    //await fetch('https://young-escarpment-72389.herokuapp.com/api/sende?ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z,{ credentials: 'include'})
                 }
             }
         };
