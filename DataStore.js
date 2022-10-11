@@ -145,6 +145,6 @@ module.exports = {
         await this.dataRef.child('0/lobby/0').child(`${opp}/0/gz`).set(gz)
     },
     async sendshot(opp,ar){
-        await this.dataRef.child('0/lobby/0').child(`${opp}/0/shot`).set(ar)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/shot`).set(ar)
     }
 }

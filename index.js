@@ -38,6 +38,7 @@ app.get('/api/findname',
 app.get('/api/sendshot',
     async (req, res) => {
         await DataStore.sendshot(req.user?.id,req.query.ar)
+        res.status(200)
     });
 app.get('/api/getobs',
     async (req, res) => {

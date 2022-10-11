@@ -373,14 +373,14 @@
             }
             if(online){
                 online2=true
-                turn=true
+                yourturn=true
                 const name=await findname()
                 console.log(name)
                 const data=await findmatch()
                 console.log(data)
                 console.log(data==null)
                 if(data==null){
-                    turn=false
+                    yourturn=false
                     var data2=await checkopp(name)
                     //console.log(data)
                     while(data2=='none'){
@@ -3403,7 +3403,7 @@
             "1500";
             while ((t !== 1 && (typeof t !== "object" || RS_not_equals(t, 1)))) {
                 "1501";
-                (await rate(50));
+                //(await rate(50));
                 "1502";
                 time=time["+"](1);
                 "1503";
@@ -8327,7 +8327,7 @@
         "3994";
         while (true) {
             "3995";
-            (await rate(50));
+            //(await rate(50));
             "3996";
             var RS_Iter51 = range(0, len(walls));
             RS_Iter51 = ((typeof RS_Iter51[Symbol.iterator] === "function") ? (RS_Iter51 instanceof Map ? RS_Iter51.keys() : RS_Iter51) : Object.keys(RS_Iter51));
