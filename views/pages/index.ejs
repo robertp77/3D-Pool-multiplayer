@@ -399,11 +399,11 @@
             vu = 1;
             "529";
         }
-        async function process2(ev){
-            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
+        function process2(ev){
+            fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
         }
-        async function process3(ev){
-            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
+        function process3(ev){
+            fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
         }
         async function foo(){
             await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
