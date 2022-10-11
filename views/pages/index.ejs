@@ -15,7 +15,7 @@
     
     // START JAVASCRIPT
     ;(function() {;
-    var peepe, scr, temp, remp, refr, nonsense, rofr, roofr, vu, wormpower, yourturn, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
+    var peepe, scr, temp, remp, refr, nonsense, rofr, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
     async function __main__() {
     "use strict";
     
@@ -352,11 +352,15 @@
             const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findmatch',{ credentials: 'include'})
             return response.json()
         }
+        async function getobs(){
+            const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent,{ credentials: 'include'})
+            return response.json()
+        }
         async function findname(){
             const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/findname',{ credentials: 'include'})
             return response.json()
         }
-        async function checkopp(name){
+        async function checkopp(){
             const response=await fetch('https://young-escarpment-72389.herokuapp.com/api/checkopp?name='+name)
             return response.json()
         }
@@ -410,42 +414,42 @@
         async function foo(){
             await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
             //while(true){
-            let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
-            pointer.axis.x=pax
-            pointer.axis.y=pay
-            pointer.axis.z=paz
+            let dat= await getobs()
+            pointer.axis.x=dat.pax
+            pointer.axis.y=dat.pay
+            pointer.axis.z=dat.paz
             ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-            aimball.pos.x=ax
-            aimball.pos.y=ay
-            aimball.pos.z=az
-            gravityball.pos.x=gx
-            gravityball.pos.y=gy
-            gravityball.pos.z=gz
+            aimball.pos.x=dat.ax
+            aimball.pos.y=dat.ay
+            aimball.pos.z=dat.az
+            gravityball.pos.x=dat.gx
+            gravityball.pos.y=dat.gy
+            gravityball.pos.z=dat.gz
             if(turn==1){
-                pointer1.axis.x=wx
-                pointer1.axis.y=wy
-                pointer1.axis.z=wz
-                entry.pos.x=ex
-                entry.pos.y=ey
-                entry.pos.z=ez
-                entry.size.x=esx
-                entry.size.y=esy
-                entry.size.z=esz
+                pointer1.axis.x=dat.wx
+                pointer1.axis.y=dat.wy
+                pointer1.axis.z=dat.wz
+                entry.pos.x=dat.ex
+                entry.pos.y=dat.ey
+                entry.pos.z=dat.ez
+                entry.size.x=dat.esx
+                entry.size.y=dat.esy
+                entry.size.z=dat.esz
                 wormpower=mag(pointer1.axis)["/"](.2["/"](14))
             }
             else{
-                pointer1.axis.x=wx
-                pointer1.axis.y=wy
-                pointer1.axis.z=wz
-                exit.pos.x=ex
-                exit.pos.y=ey
-                exit.pos.z=ez
-                exit.size.x=esx
-                exit.size.y=esy
-                exit.size.z=esz
+                pointer1.axis.x=dat.wx
+                pointer1.axis.y=dat.wy
+                pointer1.axis.z=dat.wz
+                exit.pos.x=dat.ex
+                exit.pos.y=dat.ey
+                exit.pos.z=dat.ez
+                exit.size.x=dat.esx
+                exit.size.y=dat.esy
+                exit.size.z=dat.esz
                 wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
             }
-            if(shot==true){
+            if(dat.shot==true){
                 await shoot()
                 //break
             }
@@ -462,17 +466,17 @@
             if(online){
                 online2=true
                 yourturn=true
-                const name=await findname()
+                name=await findname()
                 console.log(name)
                 const data=await findmatch()
                 console.log(data)
                 console.log(data==null)
                 if(data==null){
                     yourturn=false
-                    var data2=await checkopp(name)
+                    var data2=await checkopp()
                     //console.log(data)
                     while(data2=='none'){
-                        data2=await checkopp(name)
+                        data2=await checkopp()
                         console.log(data2)
                     }
                     opponent=data2
@@ -8887,10 +8891,10 @@
             if(online2){
                 if(yourturn==true){
                     if(turn==1){
-                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z,{ credentials: 'include'})
+                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&name='+name)
                     }
                     else{
-                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z,{ credentials: 'include'})
+                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&name='+name)
                     }
                 }
                 else{

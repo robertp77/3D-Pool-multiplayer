@@ -115,6 +115,8 @@ module.exports = {
         return ans.val()
     },
     async getobs(opp){
+        let ans=await this.dataRef.child('0/lobby/0').child(`${opp}`).once('value')
+        return ans.val()
         let pax=await this.dataRef.child('0/lobby/0').child(`${opp}/pax`).once('value')
         let pay=await this.dataRef.child('0/lobby/0').child(`${opp}/pay`).once('value')
         let paz=await this.dataRef.child('0/lobby/0').child(`${opp}/paz`).once('value')

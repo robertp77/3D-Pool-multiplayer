@@ -47,7 +47,7 @@ app.get('/api/getobs',
     });
 app.get('/api/sendobs',
     async (req, res) => {
-        await DataStore.sendobs(req.user?.id,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz,req.query.ex,req.query.ey,req.query.ez,req.query.esx,req.query.esy,req.query.esz)
+        await DataStore.sendobs(req.query.name,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz,req.query.ex,req.query.ey,req.query.ez,req.query.esx,req.query.esy,req.query.esz)
         res.json(9);
     });
 app.get('/api/sendaim',
