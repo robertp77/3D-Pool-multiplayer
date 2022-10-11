@@ -1607,7 +1607,7 @@
                     "689";
                     rang = scene.range;
                     ev = (await scene.waitfor("mouseup"));
-                    await process2(ev)
+                    return await process2(ev)
                 }
             }
         };
@@ -1707,7 +1707,7 @@
                 }
             }
             ev = (await scene.waitfor("mouseup"));
-            await process3(ev)
+            return await process3(ev)
         };
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
