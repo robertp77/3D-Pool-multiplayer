@@ -400,54 +400,54 @@
             "529";
         }
         function process2(ev){
-            fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
+            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z,{ credentials: 'include'})
         }
         function process3(ev){
             fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim2?ax='+aimball.x+'&ay='+aimball.y+'&az='+aimball.z,{ credentials: 'include'})
         }
         async function foo(){
             await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false,{ credentials: 'include'})
-            while(true){
-                let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
-                pointer.axis.x=pax
-                pointer.axis.y=pay
-                pointer.axis.z=paz
-                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-                aimball.pos.x=ax
-                aimball.pos.y=ay
-                aimball.pos.z=az
-                gravityball.pos.x=gx
-                gravityball.pos.y=gy
-                gravityball.pos.z=gz
-                if(turn==1){
-                    pointer1.axis.x=wx
-                    pointer1.axis.y=wy
-                    pointer1.axis.z=wz
-                    entry.pos.x=ex
-                    entry.pos.y=ey
-                    entry.pos.z=ez
-                    entry.size.x=esx
-                    entry.size.y=esy
-                    entry.size.z=esz
-                    wormpower=mag(pointer1.axis)["/"](.2["/"](14))
-                }
-                else{
-                    pointer1.axis.x=wx
-                    pointer1.axis.y=wy
-                    pointer1.axis.z=wz
-                    exit.pos.x=ex
-                    exit.pos.y=ey
-                    exit.pos.z=ez
-                    exit.size.x=esx
-                    exit.size.y=esy
-                    exit.size.z=esz
-                    wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
-                }
-                if(shot==true){
-                    await shoot()
-                    //break
-                }
+            //while(true){
+            let pax,pay,paz,wx,wy,wz,wp,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz,shot= await fetch('https://young-escarpment-72389.herokuapp.com/api/getobs?opp='+opponent)
+            pointer.axis.x=pax
+            pointer.axis.y=pay
+            pointer.axis.z=paz
+            ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
+            aimball.pos.x=ax
+            aimball.pos.y=ay
+            aimball.pos.z=az
+            gravityball.pos.x=gx
+            gravityball.pos.y=gy
+            gravityball.pos.z=gz
+            if(turn==1){
+                pointer1.axis.x=wx
+                pointer1.axis.y=wy
+                pointer1.axis.z=wz
+                entry.pos.x=ex
+                entry.pos.y=ey
+                entry.pos.z=ez
+                entry.size.x=esx
+                entry.size.y=esy
+                entry.size.z=esz
+                wormpower=mag(pointer1.axis)["/"](.2["/"](14))
             }
+            else{
+                pointer1.axis.x=wx
+                pointer1.axis.y=wy
+                pointer1.axis.z=wz
+                exit.pos.x=ex
+                exit.pos.y=ey
+                exit.pos.z=ez
+                exit.size.x=esx
+                exit.size.y=esy
+                exit.size.z=esz
+                wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
+            }
+            if(shot==true){
+                await shoot()
+                //break
+            }
+            //}
         }
         gaurav = Math.pow((4["*"](r["**"](2))["-"](2["*"](r["**"](2)))), .5);
         async function newgame() {
@@ -561,6 +561,17 @@
             "183";
             balls = RS_list_decorate([ ball0.pos, ball1.pos, ball2.pos, ball3.pos, ball4.pos, ball5.pos, ball6.pos, ball7.pos, ball8.pos, ball9.pos, ball10.pos, ball11.pos, ball12.pos, ball13.pos, ball.pos ]);
             "184";
+            if(online2==false || yourturn==true){
+                "728";
+                scene.bind("mousemove", point);
+                "729";
+                scene.bind("mousedown", reff);
+                "730";
+            }
+            else{
+                await freevu();
+                await foo()
+            }
             /*
             ball4.pos = vector(side["-u"]()["+"](r)["+"](random()["*"](2["*"](side)["-"](2["*"](r)))), side["-u"]()["+"](r)["+"](random()["*"](2["*"](side)["-"](2["*"](r)))), 4["-u"]()["+"](2["*"](r))["+"](random()["*"](8["-"](2["*"](r)))));
             "185";
@@ -1418,6 +1429,40 @@
                     scene.bind("mousemove", veew);
                     "600";
                     vu = 1;
+                }
+            }
+            var RS_Iter51 = range(0, len(walls));
+            RS_Iter51 = ((typeof RS_Iter51[Symbol.iterator] === "function") ? (RS_Iter51 instanceof Map ? RS_Iter51.keys() : RS_Iter51) : Object.keys(RS_Iter51));
+            for (var RS_Index51 of RS_Iter51) {
+                n = RS_Index51;
+                "3997";
+                wall = walls[(typeof n === "number" && n["<"](0)) ? walls.length["+"](n) : n];
+                "3998";
+                walls.remove(walls[(typeof n === "number" && n["<"](0)) ? walls.length["+"](n) : n]);
+                "3999";
+                count = 0;
+                "4000";
+                var RS_Iter52 = range(0, len(walls));
+                RS_Iter52 = ((typeof RS_Iter52[Symbol.iterator] === "function") ? (RS_Iter52 instanceof Map ? RS_Iter52.keys() : RS_Iter52) : Object.keys(RS_Iter52));
+                for (var RS_Index52 of RS_Iter52) {
+                    nn = RS_Index52;
+                    "4001";
+                    if (mag(wall.pos["-"](scene.camera.pos))[">"](mag(walls[(typeof nn === "number" && nn["<"](0)) ? walls.length["+"](nn) : nn].pos["-"](scene.camera.pos)))) {
+                        "4002";
+                        count=count["+"](1);
+                    }
+                }
+                "4003";
+                (await walls.insert(n, wall));
+                "4004";
+                if (count["<"](.5["*"](len(walls)))) {
+                    "4005";
+                    walls[(typeof n === "number" && n["<"](0)) ? walls.length["+"](n) : n].visible = false;
+                    "4006";
+                } else {
+                    "4007";
+                    walls[(typeof n === "number" && n["<"](0)) ? walls.length["+"](n) : n].visible = true;
+                    "4008";
                 }
             }
         };
@@ -3969,7 +4014,7 @@
                             scene.unbind("click", grav);
                             scene.unbind("mousemove", point);
                             yourturn=false
-                            return await foo()
+                            //return await foo()
                         }
                         break;
                     }
@@ -8367,6 +8412,7 @@
         while (true) {
             "3995";
             (await rate(50));
+            /*
             "3996";
             var RS_Iter51 = range(0, len(walls));
             RS_Iter51 = ((typeof RS_Iter51[Symbol.iterator] === "function") ? (RS_Iter51 instanceof Map ? RS_Iter51.keys() : RS_Iter51) : Object.keys(RS_Iter51));
@@ -8402,6 +8448,7 @@
                     "4008";
                 }
             }
+            */
             if (clock()["-"](t1)[">"](100) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0)) && (nonsense !== 6 && (typeof nonsense !== "object" || RS_not_equals(nonsense, 6)))) {
                 "4009";
                 pointer.pos = ball.pos;
@@ -8833,16 +8880,19 @@
             "4195";
             Ttt.depth = Ttt.height["*"](.2);
             //console.log(yourturn)
-            /*
-            if(yourturn==true){
-                if(turn==1){
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+wormvector.x+'&wy='+wormvector.y+'&wz='+wormvector.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
+            if(online2){
+                if(yourturn==true){
+                    if(turn==1){
+                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z,{ credentials: 'include'})
+                    }
+                    else{
+                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z,{ credentials: 'include'})
+                    }
                 }
                 else{
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+wormvectorr.x+'&wy='+wormvectorr.y+'&wz='+wormvectorr.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z,{ credentials: 'include'})
+                    await foo()
                 }
             }
-            */
         }
     };
     if (!__main__.__module__) Object.defineProperties(__main__, {
