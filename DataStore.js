@@ -127,7 +127,7 @@ module.exports = {
         let gx=await this.dataRef.child('0/lobby/0').child(`${opp}/gx`).once('value')
         let gy=await this.dataRef.child('0/lobby/0').child(`${opp}/gy`).once('value')
         let gz=await this.dataRef.child('0/lobby/0').child(`${opp}/gz`).once('value')
-        let shot=await this.dataRef.child('0/lobby/0').child(`${opp}/gz`).once('value')
+        let shot=await this.dataRef.child('0/lobby/0').child(`${opp}/shot`).once('value')
         return pax.val(),pay.val(),paz.val(),wx.val(),wy.val(),wz.val(),ax.val(),ay.val(),az.val(),gx.val(),gy.val(),gz.val(),shot.val()
     },
     async sendobs(opp,pax,pay,paz,wx,wy,wz,ax,ay,az,gx,gy,gz){
