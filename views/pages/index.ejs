@@ -1713,7 +1713,7 @@
                 "747";
                 if ((ev.event === "mouseup" || typeof ev.event === "object" && RS_equals(ev.event, "mouseup"))) {
                     "748";
-                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot&ar='+true,{ credentials: 'include'})
+                    await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+true,{ credentials: 'include'})
                     (await shoot());
                 }
             }
