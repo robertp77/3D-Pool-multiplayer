@@ -415,7 +415,6 @@
             await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+false+'&name='+name)
             //while(true){
             let dat= await getobs()
-            console.log(dat)
             if(dat.wz!=undefined){
                 ball.pos.x=parseInt(dat.bx)
                 ball.pos.y=parseInt(dat.by)
@@ -457,10 +456,7 @@
                     exit.size.z=parseInt(dat.esz)
                     wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
                 }
-                console.log(balls)
                 if(dat.shot=='true'){
-                    balls[14]=ball.pos
-                    console.log(balls)
                     await shoot();
                     //break
                 }
