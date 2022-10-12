@@ -53,7 +53,7 @@ app.get('/api/sendobs',
 app.get('/api/sendaim',
     async (req, res) => {
         await DataStore.sendaim(req.query.name,req.query.pax,req.query.pay,req.query.paz)
-        //res.json(lat);
+        res.json(9);
     });
 app.get('/api/sendaim2',
     async (req, res) => {
