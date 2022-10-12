@@ -4254,6 +4254,7 @@
                                 "1841";
                                 vi = (await vel1.dot(u1));
                                 "1842";
+                                /*
                                 ctheta = 0;
                                 "1843";
                                 var RS_Iter44 = range(0, len(balltouches));
@@ -4268,12 +4269,27 @@
                                 "1846";
                                 v1 = sqrt(vi["**"](2)["-"](len(balltouches)["*"](v3["**"](2))));
                                 "1847";
-                                vel1=vel1["-"](v1["*"](u1));
+                                */
+                                //vel1=vel1["-"](v1["*"](u1));
+                                vel1=vel1["-"](u1["*"](vi));
+                                "1892";
+                                var vt = vec(0, 0, 0);
                                 "1848";
                                 var RS_Iter45 = balltouches;
                                 RS_Iter45 = ((typeof RS_Iter45[Symbol.iterator] === "function") ? (RS_Iter45 instanceof Map ? RS_Iter45.keys() : RS_Iter45) : Object.keys(RS_Iter45));
                                 for (var RS_Index45 of RS_Iter45) {
                                     p = RS_Index45;
+                                    dis = norm(balls[(typeof p === "number" && p["<"](0)) ? balls.length["+"](p) : p]["-"](ballpos));
+                                    "1896";
+                                    dov = (await (vi["*"](u1)["-"](vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p])).dot(dis));
+                                    "1897";
+                                    if (dov[">"](0)) {
+                                        "1898";
+                                        vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](dis["*"](dov));
+                                        "1899";
+                                        vt=vt["+"](dis["*"](dov));
+                                    }
+                                    /*
                                     "1849";
                                     dis = norm(balls[(typeof p === "number" && p["<"](0)) ? balls.length["+"](p) : p]["-"](ballpos));
                                     "1850";
@@ -4285,8 +4301,9 @@
                                         "1853";
                                         vel1=vel1["-"](dis["*"](dov));
                                     }
+                                    */
                                     "1854";
-                                    vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](v3["*"](dis));
+                                    //vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](v3["*"](dis));
                                     "1855";
                                     speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p] = vector(abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z)["+"](1e-8));
                                     "1856";
@@ -4298,8 +4315,18 @@
                                     "1859";
                                     dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].z = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].z);
                                 }
+                                if (mag(vt)[">"](vi)) {
+                                    "1908";
+                                    var RS_Iter43 = balltouches;
+                                    RS_Iter43 = ((typeof RS_Iter43[Symbol.iterator] === "function") ? (RS_Iter43 instanceof Map ? RS_Iter43.keys() : RS_Iter43) : Object.keys(RS_Iter43));
+                                    for (var RS_Index43 of RS_Iter43) {
+                                        p = RS_Index43;
+                                        "1909";
+                                        vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["*"](vi["/"](mag(vt)));
+                                    }
+                                }
                                 "1860";
-                                vel1=vel1["+"](v1["*"](u1));
+                                //vel1=vel1["+"](v1["*"](u1));
                                 "1861";
                                 ball1.p = vector(abs(vel1.x)["+"](1e-8), abs(vel1.y)["+"](1e-8), abs(vel1.z)["+"](1e-8));
                                 "1862";
