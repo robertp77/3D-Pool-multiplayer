@@ -451,7 +451,7 @@
                 wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
             }
             if(dat.shot==true){
-                await shoot()
+                (await shoot());
                 //break
             }
             //}
@@ -1830,6 +1830,7 @@
                 "747";
                 if ((ev.event === "mouseup" || typeof ev.event === "object" && RS_equals(ev.event, "mouseup"))) {
                     "748";
+                    scene.unbind("mouseleave", putback);
                     (await shoot());
                 }
             }
@@ -3524,6 +3525,7 @@
             while ((t !== 1 && (typeof t !== "object" || RS_not_equals(t, 1)))) {
                 "1501";
                 (await rate(50));
+                console.log(yourturn)
                 "1502";
                 time=time["+"](1);
                 "1503";
