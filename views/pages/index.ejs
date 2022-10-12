@@ -3525,7 +3525,6 @@
             while ((t !== 1 && (typeof t !== "object" || RS_not_equals(t, 1)))) {
                 "1501";
                 (await rate(50));
-                console.log(yourturn)
                 "1502";
                 time=time["+"](1);
                 "1503";
@@ -4200,6 +4199,7 @@
                             touched = 1;
                             "1813";
                             if (RS_equals(len(balltouches), 1)) {
+                                console.log(1)
                                 "1814";
                                 var RS_Iter42 = balltouches;
                                 RS_Iter42 = ((typeof RS_Iter42[Symbol.iterator] === "function") ? (RS_Iter42 instanceof Map ? RS_Iter42.keys() : RS_Iter42) : Object.keys(RS_Iter42));
