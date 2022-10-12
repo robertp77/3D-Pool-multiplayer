@@ -417,44 +417,44 @@
             let dat= await getobs()
             console.log(dat)
             if(dat.wz!=undefined){
-                ball.pos.x=dat.bx
-                ball.pos.y=dat.by
-                ball.pos.z=dat.bz
-                pointer.pos.x=dat.bx
-                pointer.pos.y=dat.by
-                pointer.pos.z=dat.bz
-                pointer.axis.x=dat.pax
-                pointer.axis.y=dat.pay
-                pointer.axis.z=dat.paz
+                ball.pos.x=parseInt(dat.bx)
+                ball.pos.y=parseInt(dat.by)
+                ball.pos.z=parseInt(dat.bz)
+                pointer.pos.x=parseInt(dat.bx)
+                pointer.pos.y=parseInt(dat.by)
+                pointer.pos.z=parseInt(dat.bz)
+                pointer.axis.x=parseInt(dat.pax)
+                pointer.axis.y=parseInt(dat.pay)
+                pointer.axis.z=parseInt(dat.paz)
                 ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-                aimball.pos.x=dat.ax
-                aimball.pos.y=dat.ay
-                aimball.pos.z=dat.az
-                gravityball.pos.x=dat.gx
-                gravityball.pos.y=dat.gy
-                gravityball.pos.z=dat.gz
+                aimball.pos.x=parseInt(dat.ax)
+                aimball.pos.y=parseInt(dat.ay)
+                aimball.pos.z=parseInt(dat.az)
+                gravityball.pos.x=parseInt(dat.gx)
+                gravityball.pos.y=parseInt(dat.gy)
+                gravityball.pos.z=parseInt(dat.gz)
                 if(turn==1){
-                    pointer1.axis.x=dat.wx
-                    pointer1.axis.y=dat.wy
-                    pointer1.axis.z=dat.wz
-                    entry.pos.x=dat.ex
-                    entry.pos.y=dat.ey
-                    entry.pos.z=dat.ez
-                    entry.size.x=dat.esx
-                    entry.size.y=dat.esy
-                    entry.size.z=dat.esz
+                    pointer1.axis.x=parseInt(dat.wx)
+                    pointer1.axis.y=parseInt(dat.wy)
+                    pointer1.axis.z=parseInt(dat.wz)
+                    entry.pos.x=parseInt(dat.ex)
+                    entry.pos.y=parseInt(dat.ey)
+                    entry.pos.z=parseInt(dat.ez)
+                    entry.size.x=parseInt(dat.esx)
+                    entry.size.y=parseInt(dat.esy)
+                    entry.size.z=parseInt(dat.esz)
                     wormpower=mag(pointer1.axis)["/"](.2["/"](14))
                 }
                 else{
-                    pointer1.axis.x=dat.wx
-                    pointer1.axis.y=dat.wy
-                    pointer1.axis.z=dat.wz
-                    exit.pos.x=dat.ex
-                    exit.pos.y=dat.ey
-                    exit.pos.z=dat.ez
-                    exit.size.x=dat.esx
-                    exit.size.y=dat.esy
-                    exit.size.z=dat.esz
+                    pointer1.axis.x=parseInt(dat.wx)
+                    pointer1.axis.y=parseInt(dat.wy)
+                    pointer1.axis.z=parseInt(dat.wz)
+                    exit.pos.x=parseInt(dat.ex)
+                    exit.pos.y=parseInt(dat.ey)
+                    exit.pos.z=parseInt(dat.ez)
+                    exit.size.x=parseInt(dat.esx)
+                    exit.size.y=parseInt(dat.esy)
+                    exit.size.z=parseInt(dat.esz)
                     wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
                 }
                 console.log(balls)
