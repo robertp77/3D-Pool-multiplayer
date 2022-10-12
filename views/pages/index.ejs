@@ -15,7 +15,7 @@
     
     // START JAVASCRIPT
     ;(function() {;
-    var peepe, scr, temp, remp, refr, nonsense, rofr, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
+    var peepe, scr, temp, remp, refr, nonsense, rofr, shotted, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
     async function __main__() {
     "use strict";
     
@@ -568,6 +568,7 @@
             "183";
             balls = RS_list_decorate([ ball0.pos, ball1.pos, ball2.pos, ball3.pos, ball4.pos, ball5.pos, ball6.pos, ball7.pos, ball8.pos, ball9.pos, ball10.pos, ball11.pos, ball12.pos, ball13.pos, ball.pos ]);
             "184";
+            shotted=false
             if(online2==false || yourturn==true){
                 "728";
                 scene.bind("mousemove", point);
@@ -4021,6 +4022,7 @@
                             scene.unbind("mousedown", reff);
                             scene.unbind("click", grav);
                             scene.unbind("mousemove", point);
+                            shotted=false
                             yourturn=false
                             //return await foo()
                         }
@@ -8890,14 +8892,17 @@
             //console.log(yourturn)
             if(online2){
                 if(yourturn==true){
-                    if(turn==1){
-                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&name='+name)
+                    if(peepe==0){
+                        if(turn==1){
+                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&name='+name)
+                        }
+                        else{
+                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&name='+name)
+                        }
                     }
-                    else{
-                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&name='+name)
-                    }
-                    if(peepe==1){
+                    else if(shotted==false){
                         await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+true+'&name='+name)
+                        shotted=true
                     }
                 }
                 else{
