@@ -416,46 +416,49 @@
             //while(true){
             let dat= await getobs()
             console.log(dat)
-            pointer.axis.x=dat.pax
-            pointer.axis.y=dat.pay
-            pointer.axis.z=dat.paz
-            ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
-            aimball.pos.x=dat.ax
-            aimball.pos.y=dat.ay
-            aimball.pos.z=dat.az
-            gravityball.pos.x=dat.gx
-            gravityball.pos.y=dat.gy
-            gravityball.pos.z=dat.gz
-            if(turn==1){
-                pointer1.axis.x=dat.wx
-                pointer1.axis.y=dat.wy
-                pointer1.axis.z=dat.wz
-                entry.pos.x=dat.ex
-                entry.pos.y=dat.ey
-                entry.pos.z=dat.ez
-                entry.size.x=dat.esx
-                entry.size.y=dat.esy
-                entry.size.z=dat.esz
-                wormpower=mag(pointer1.axis)["/"](.2["/"](14))
+            if(dat.pax!=undefined){
+                pointer.axis.x=dat.pax
+                pointer.axis.y=dat.pay
+                pointer.axis.z=dat.paz
+                ball.p = pointer.axis["/"](mag(pointer.axis))["*"](Math.pow(mag(pointer.axis)["*"](2["*"](.028["/"](.014))),0.5));
+                aimball.pos.x=dat.ax
+                aimball.pos.y=dat.ay
+                aimball.pos.z=dat.az
+                gravityball.pos.x=dat.gx
+                gravityball.pos.y=dat.gy
+                gravityball.pos.z=dat.gz
+                if(turn==1){
+                    pointer1.axis.x=dat.wx
+                    pointer1.axis.y=dat.wy
+                    pointer1.axis.z=dat.wz
+                    entry.pos.x=dat.ex
+                    entry.pos.y=dat.ey
+                    entry.pos.z=dat.ez
+                    entry.size.x=dat.esx
+                    entry.size.y=dat.esy
+                    entry.size.z=dat.esz
+                    wormpower=mag(pointer1.axis)["/"](.2["/"](14))
+                }
+                else{
+                    pointer1.axis.x=dat.wx
+                    pointer1.axis.y=dat.wy
+                    pointer1.axis.z=dat.wz
+                    exit.pos.x=dat.ex
+                    exit.pos.y=dat.ey
+                    exit.pos.z=dat.ez
+                    exit.size.x=dat.esx
+                    exit.size.y=dat.esy
+                    exit.size.z=dat.esz
+                    wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
+                }
+                console.log(dat.shot)
+                console.log(dat.shot==true)
+                if(dat.shot=='true'){
+                    console.log(9)
+                    (await shoot());
+                    //break
+                }
             }
-            else{
-                pointer1.axis.x=dat.wx
-                pointer1.axis.y=dat.wy
-                pointer1.axis.z=dat.wz
-                exit.pos.x=dat.ex
-                exit.pos.y=dat.ey
-                exit.pos.z=dat.ez
-                exit.size.x=dat.esx
-                exit.size.y=dat.esy
-                exit.size.z=dat.esz
-                wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
-            }
-            console.log(dat.shot)
-            if(dat.shot==true){
-                (await shoot());
-                //break
-            }
-            //}
         }
         gaurav = Math.pow((4["*"](r["**"](2))["-"](2["*"](r["**"](2)))), .5);
         async function newgame() {
