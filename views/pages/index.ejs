@@ -457,8 +457,9 @@
                     exit.size.z=dat.esz
                     wormpowerr=mag(pointer2.axis)["/"](.2["/"](14))
                 }
-                console.log(ball.pos)
+                console.log(balls)
                 if(dat.shot=='true'){
+                    balls[14]=ball.pos
                     console.log(balls)
                     await shoot();
                     //break
