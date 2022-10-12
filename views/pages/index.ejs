@@ -3472,6 +3472,7 @@
             peepe = 1;
             "1459";
             spall = vector(abs(ball.p.x), abs(ball.p.y), abs(ball.p.z));
+            console.log(spall)
             "1460";
             speeds[RS_bound_index(len(balls)["-"](1), speeds)] = spall;
             "1461";
@@ -4203,7 +4204,6 @@
                             touched = 1;
                             "1813";
                             if (RS_equals(len(balltouches), 1)) {
-                                console.log(1)
                                 "1814";
                                 var RS_Iter42 = balltouches;
                                 RS_Iter42 = ((typeof RS_Iter42[Symbol.iterator] === "function") ? (RS_Iter42 instanceof Map ? RS_Iter42.keys() : RS_Iter42) : Object.keys(RS_Iter42));
@@ -4249,7 +4249,6 @@
                                 "1833";
                                 (await speeds.insert(q, ball1.p));
                                 "1834";
-                                console.log(2)
                             } else if (len(balltouches)[">"](1)) {
                                 "1835";
                                 print(9);
@@ -4624,8 +4623,6 @@
                 RS_Iter50 = ((typeof RS_Iter50[Symbol.iterator] === "function") ? (RS_Iter50 instanceof Map ? RS_Iter50.keys() : RS_Iter50) : Object.keys(RS_Iter50));
                 for (var RS_Index50 of RS_Iter50) {
                     x = RS_Index50;
-                    console.log(x)
-                    console.log(balls[x])
                     "2169";
                     if (mag(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x])[">"](.001)) {
                         "2170";
