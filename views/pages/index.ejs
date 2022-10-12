@@ -554,11 +554,10 @@
             if(online2==false || yourturn==true){
                 "728";
                 scene.bind("mousemove", point);
-                "729";
                 scene.bind("mousedown", reff);
-                "730";
             }
             else{
+                scene.bind("mousedown", reff);
                 scene.unbind("mousedown", reff);
                 await freevu();
                 console.log('here')
@@ -1751,19 +1750,12 @@
         if (!point.__module__) Object.defineProperties(point, {
             __module__ : {value: "__main__"}
         });
-        if(online2==false || yourturn==true){
-            "728";
-            scene.bind("mousemove", point);
-            "729";
-            console.log('heree')
-            scene.bind("mousedown", reff);
-            "730";
-        }
-        else{
-            await freevu();
-            //scene.bind("mousemove", veew);
-            await foo()
-        }
+        "728";
+        scene.bind("mousemove", point);
+        "729";
+        console.log('heree')
+        scene.bind("mousedown", reff);
+        "730";
         async function shotspeed() {
             var RS_ls, temp, ev;
             "731";
