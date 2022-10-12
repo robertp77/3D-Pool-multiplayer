@@ -4288,6 +4288,15 @@
                                         vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](dis["*"](dov));
                                         "1899";
                                         vt=vt["+"](dis["*"](dov));
+                                        speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p] = vector(abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z)["+"](1e-8));
+                                        "1856";
+                                        uvels[(typeof p === "number" && p["<"](0)) ? uvels.length["+"](p) : p] = speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p]["/"](mag(speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p]));
+                                        "1857";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].x = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].x);
+                                        "1858";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].y = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].y);
+                                        "1859";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].z = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].z);
                                     }
                                     /*
                                     "1849";
@@ -4301,9 +4310,8 @@
                                         "1853";
                                         vel1=vel1["-"](dis["*"](dov));
                                     }
-                                    */
                                     "1854";
-                                    //vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](v3["*"](dis));
+                                    vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["+"](v3["*"](dis));
                                     "1855";
                                     speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p] = vector(abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z)["+"](1e-8));
                                     "1856";
@@ -4314,6 +4322,7 @@
                                     dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].y = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].y);
                                     "1859";
                                     dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].z = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].z);
+                                    */
                                 }
                                 if (mag(vt)[">"](vi)) {
                                     "1908";
@@ -4323,6 +4332,15 @@
                                         p = RS_Index43;
                                         "1909";
                                         vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]=vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p]["*"](vi["/"](mag(vt)));
+                                        speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p] = vector(abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y)["+"](1e-8), abs(vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z)["+"](1e-8));
+                                        "1856";
+                                        uvels[(typeof p === "number" && p["<"](0)) ? uvels.length["+"](p) : p] = speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p]["/"](mag(speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p]));
+                                        "1857";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].x = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].x["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].x);
+                                        "1858";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].y = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].y["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].y);
+                                        "1859";
+                                        dirs[(typeof p === "number" && p["<"](0)) ? dirs.length["+"](p) : p].z = vels[(typeof p === "number" && p["<"](0)) ? vels.length["+"](p) : p].z["/"](speeds[(typeof p === "number" && p["<"](0)) ? speeds.length["+"](p) : p].z);
                                     }
                                 }
                                 "1860";
