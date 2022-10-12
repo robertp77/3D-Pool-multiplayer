@@ -474,17 +474,12 @@
             if(online){
                 yourturn=true
                 name=await findname()
-                console.log(name)
                 const data=await findmatch()
-                console.log(data)
-                console.log(data==null)
                 if(data==null){
                     yourturn=false
                     var data2=await checkopp()
-                    //console.log(data)
                     while(data2=='none'){
                         data2=await checkopp()
-                        console.log(data2)
                     }
                     opponent=data2
                 }
@@ -492,27 +487,6 @@
                     opponent=data.name
                 }
                 online2=true
-                //turn=data.turn
-                /*
-                const data=await findmatch()
-                const name=await findname()
-                var turn=false
-                for(let i=0;i<Object.values(data[0]).length;i++){
-                    console.log(Object.values(data[0])[i][0])
-                    console.log(name)
-                    //const opp=Object.values(data[0])[i][0]
-                    if(Object.values(data[0])[i][0]!=req.user?.id){
-                        console.log(opp)
-                        return Object.values(data[0])[i][0],turn
-                    }
-                    else{
-                        turn=true
-                    }
-                }
-                return null,turn
-                */
-                console.log(8)
-                //yourturn=turn
             }
             var RS_ls, qwe, n, nn, nnn, q;
             "168";
@@ -4102,11 +4076,11 @@
                                 "1765";
                                 ballposs = ballpos["+"](diss["*"](2["*"](r)["-"](mag(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ballpos)))));
                                 "1766";
-                                console.log(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])
-                                console.log(ballpos)
-                                console.log(ballposs)
-                                console.log(diss)
-                                console.log((mag(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ballpos))))
+                                //console.log(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])
+                                //console.log(ballpos)
+                                //console.log(ballposs)
+                                //console.log(diss)
+                                //console.log((mag(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ballpos))))
                                 dis = balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ballposs)["/"](mag(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ballposs)));
                                 "1767";
                                 diss = ballposs["-"](balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])["/"](mag(ballposs["-"](balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])));
@@ -4683,7 +4657,7 @@
                             }
                         } else {
                             "2190";
-                            console.log(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])
+                            //console.log(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x])
                             if (balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].x[">="](side["-"](2.5["*"](thk))) && balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].y[">="](side["-"](2.5["*"](thk))) && balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].z["<="](4["-u"]()["+"](2["*"](thk)))) {
                                 "2191";
                                 if (balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].x[">"](side["-"](.5["*"](thk))) || balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].y[">"](side["-"](.5["*"](thk))) || balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].z["<"](4["-u"]())) {
