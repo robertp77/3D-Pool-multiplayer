@@ -15,7 +15,7 @@
     
     // START JAVASCRIPT
     ;(function() {;
-    var peepe, scr, temp, remp, refr, nonsense, rofr, shotted, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
+    var peepe, scr, temp, remp, refr, nonsense, rofr, allowed, shotted, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
     async function __main__() {
     "use strict";
     
@@ -53,6 +53,7 @@
         sidee = 4["+"](.5["*"](thk));
         opponent=null
         online2=false;
+        allowed=true
         "21";
         rtbr = RS_interpolate_kwargs.call(this, extrusion, [RS_desugar_kwargs({path: RS_list_decorate([ vector(side["+"](.5["*"](thk)), side["-"](thk), 4["-u"]()["+"](.5["*"](thk))), vector(side["+"](.51["*"](thk)), side["-"](thk), 4["-u"]()["+"](.5["*"](thk))) ]), shape: RS_interpolate_kwargs.call(shapes, shapes.rectangle, [RS_desugar_kwargs({width: 3["*"](thk), height: 3["*"](thk)})]), color: color.white})]);
         "22";
@@ -557,7 +558,8 @@
                 scene.bind("mousedown", reff);
             }
             else{
-                scene.unbind("mousedown", reff);
+                allowed=false
+                //scene.unbind("mousedown", reff);
                 await freevu();
                 console.log('here')
                 scene.unbind("click", grav);
@@ -1197,7 +1199,7 @@
             "477";
             "478";
             "479";
-            if ((scr === 1 || typeof scr === "object" && RS_equals(scr, 1))) {
+            if (allowed==true && (scr === 1 || typeof scr === "object" && RS_equals(scr, 1))) {
                 "480";
                 scene.bind("mousemove", move);
                 "481";
@@ -1229,11 +1231,11 @@
             "495";
             remp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: ball.pos})]);
             "496";
-            if (mag(temp["-"](ball.pos))["<"](r)) {
+            if (allowed && mag(temp["-"](ball.pos))["<"](r)) {
                 "497";
                 nonsense = 5;
                 "498";
-            } else if (mag(shooterdotcrox)["<"](shooter.radius) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
+            } else if (allowed && mag(shooterdotcrox)["<"](shooter.radius) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
                 "499";
                 scene.unbind("mousemove", aim);
                 "500";
@@ -1241,7 +1243,7 @@
                 "501";
                 nonsense = 6;
                 "502";
-            } else if (mag(wormcyldotcrox)["<"](wormcyl.radius) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
+            } else if (allowed && mag(wormcyldotcrox)["<"](wormcyl.radius) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
                 "503";
                 nonsense = 2;
                 "504";
@@ -1258,7 +1260,7 @@
                     scene.bind("mousemove", setwormpowerr);
                     "510";
                 }
-            } else if (mag(freeviewdotcrox)["<"](freeview.radius) && mag(freeviewdist["-"](ucroxx["*"](.5)["*"](mag(freeview.axis))))["<"](mag(freeview.axis)["/"](2))) {
+            } else if (allowed==true && mag(freeviewdotcrox)["<"](freeview.radius) && mag(freeviewdist["-"](ucroxx["*"](.5)["*"](mag(freeview.axis))))["<"](mag(freeview.axis)["/"](2))) {
                 "511";
                 if ((vu === 0 || typeof vu === "object" && RS_equals(vu, 0))) {
                     "512";
