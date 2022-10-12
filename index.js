@@ -47,12 +47,12 @@ app.get('/api/getobs',
     });
 app.get('/api/sendobs',
     async (req, res) => {
-        await DataStore.sendobs(req.query.name,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz,req.query.ex,req.query.ey,req.query.ez,req.query.esx,req.query.esy,req.query.esz)
+        await DataStore.sendobs(req.query.name,req.query.pax,req.query.pay,req.query.paz,req.query.wx,req.query.wy,req.query.wz,req.query.ax,req.query.ay,req.query.az,req.query.gx,req.query.gy,req.query.gz,req.query.ex,req.query.ey,req.query.ez,req.query.esx,req.query.esy,req.query.esz,req.query.bx,req.query.by,req.query.bz)
         res.json(9);
     });
 app.get('/api/sendaim',
     async (req, res) => {
-        await DataStore.sendaim(req.user?.id,req.query.pax,req.query.pay,req.query.paz)
+        await DataStore.sendaim(req.query.name,req.query.pax,req.query.pay,req.query.paz)
         //res.json(lat);
     });
 app.get('/api/sendaim2',

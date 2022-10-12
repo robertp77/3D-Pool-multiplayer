@@ -138,7 +138,7 @@ module.exports = {
         let shot=await this.dataRef.child('0/lobby/0').child(`${opp}/shot`).once('value')
         return pax.val(),pay.val(),paz.val(),wx.val(),wy.val(),wz.val(),ax.val(),ay.val(),az.val(),gx.val(),gy.val(),gz.val(),ex.val(),ey.val(),ez.val(),esx.val(),esy.val(),esz.val(),shot.val()
     },
-    async sendobs(opp,pax,pay,paz,wx,wy,wz,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz){
+    async sendobs(opp,pax,pay,paz,wx,wy,wz,ax,ay,az,gx,gy,gz,ex,ey,ez,esx,esy,esz,bx,by,bz){
         await this.dataRef.child('0/lobby/0').child(`${opp}/pax`).set(pax)
         await this.dataRef.child('0/lobby/0').child(`${opp}/pay`).set(pay)
         await this.dataRef.child('0/lobby/0').child(`${opp}/paz`).set(paz)
@@ -154,6 +154,9 @@ module.exports = {
         await this.dataRef.child('0/lobby/0').child(`${opp}/gx`).set(gx)
         await this.dataRef.child('0/lobby/0').child(`${opp}/gy`).set(gy)
         await this.dataRef.child('0/lobby/0').child(`${opp}/gz`).set(gz)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wx`).set(bx)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wy`).set(by)
+        await this.dataRef.child('0/lobby/0').child(`${opp}/wz`).set(bz)
         await this.dataRef.child('0/lobby/0').child(`${opp}/wx`).set(wx)
         await this.dataRef.child('0/lobby/0').child(`${opp}/wy`).set(wy)
         await this.dataRef.child('0/lobby/0').child(`${opp}/wz`).set(wz)

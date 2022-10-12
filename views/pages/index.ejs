@@ -417,6 +417,12 @@
             let dat= await getobs()
             console.log(dat)
             if(dat.wz!=undefined){
+                ball.pos.x=dat.bx
+                ball.pos.y=dat.by
+                ball.pos.z=dat.bz
+                pointer.pos.x=dat.bx
+                pointer.pos.y=dat.by
+                pointer.pos.z=dat.bz
                 pointer.axis.x=dat.pax
                 pointer.axis.y=dat.pay
                 pointer.axis.z=dat.paz
@@ -1779,7 +1785,7 @@
         }
         else{
             await freevu();
-            scene.bind("mousemove", veew);
+            //scene.bind("mousemove", veew);
             await foo()
         }
         async function shotspeed() {
@@ -1813,6 +1819,7 @@
                 "743";
                 (await process(ev));
             }
+            shooter.pos = scene.range["/"](5)["*"](6)["*"](norm((await scene.camera.axis.cross(scene.up))))["+"](scene.center)["-"](scene.range["/"](5)["*"](3)["*"](scene.up["-u"]()));
         };
         if (!shotspeed.__module__) Object.defineProperties(shotspeed, {
             __module__ : {value: "__main__"}
@@ -4024,10 +4031,12 @@
                             yourturn=true
                         }
                         else{
-                            scene.unbind("mousemove", aim);
+                            console.log('done')
+                            //scene.unbind("mousemove", aim);
                             scene.unbind("mousedown", reff);
                             scene.unbind("click", grav);
-                            scene.unbind("mousemove", point);
+                            //scene.unbind("mousemove", point);
+                            await freevu()
                             shotted=false
                             yourturn=false
                             //return await foo()
@@ -8906,13 +8915,14 @@
                 if(yourturn==true){
                     if(peepe==0){
                         if(turn==1){
-                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&name='+name)
+                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
                         }
                         else{
-                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&name='+name)
+                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
                         }
                     }
                     else if(shotted==false){
+                        await fetch('https://young-escarpment-72389.herokuapp.com/api/sendaim?name='+name+'&pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z)
                         await fetch('https://young-escarpment-72389.herokuapp.com/api/sendshot?ar='+true+'&name='+name)
                         shotted=true
                     }
