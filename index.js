@@ -37,7 +37,7 @@ app.get('/api/findname',
     });
 app.get('/api/sendshot',
     async (req, res) => {
-        await DataStore.sendshot(req.user?.id,req.query.ar)
+        await DataStore.sendshot(req.query.name,req.query.ar)
         res.json(9)
     });
 app.get('/api/getobs',
