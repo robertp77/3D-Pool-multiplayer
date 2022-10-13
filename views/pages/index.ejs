@@ -1822,6 +1822,8 @@
             pointer.axis = ball.p["/"](mag(ball.p))["*"](Math.pow(mag(ball.p), 2)["/"](2["*"](.028["/"](.014))));
             "741";
             scene.bind("mouseleave", putback);
+            scene.bind("mouseup", process);
+            /*
             ev = (await scene.waitfor("mouseup"));
             "742";
             if ((await (shooter.pos["-"](rofr)).dot(norm(shooter.axis)))[">"](0)) {
@@ -1829,6 +1831,7 @@
                 (await process(ev));
             }
             shooter.pos = scene.range["/"](5)["*"](6)["*"](norm((await scene.camera.axis.cross(scene.up))))["+"](scene.center)["-"](scene.range["/"](5)["*"](3)["*"](scene.up["-u"]()));
+            */
         };
         if (!shotspeed.__module__) Object.defineProperties(shotspeed, {
             __module__ : {value: "__main__"}
@@ -1842,10 +1845,16 @@
         if (!putback.__module__) Object.defineProperties(putback, {
             __module__ : {value: "__main__"}
         });
-        async function process(ev) {
+        async function process() {
             "745";
             if ((nonsense === 6 || typeof nonsense === "object" && RS_equals(nonsense, 6))) {
                 "746";
+                if ((await (shooter.pos["-"](rofr)).dot(norm(shooter.axis)))[">"](0)) {
+                    "743";
+                    shooter.pos = scene.range["/"](5)["*"](6)["*"](norm((await scene.camera.axis.cross(scene.up))))["+"](scene.center)["-"](scene.range["/"](5)["*"](3)["*"](scene.up["-u"]()));
+                    (await shoot());
+                }
+                /*
                 shooter.pos = scene.range["/"](5)["*"](6)["*"](norm((await scene.camera.axis.cross(scene.up))))["+"](scene.center)["-"](scene.range["/"](5)["*"](3)["*"](scene.up["-u"]()));
                 "747";
                 if ((ev.event === "mouseup" || typeof ev.event === "object" && RS_equals(ev.event, "mouseup"))) {
@@ -1853,6 +1862,7 @@
                     scene.unbind("mouseleave", putback);
                     (await shoot());
                 }
+                */
             }
         };
         if (!process.__argnames__) Object.defineProperties(process, {
@@ -3541,6 +3551,7 @@
             "1497";
             time = 0;
             "1498";
+            scene.unbind("mouseup", process);
             scene.unbind("mousemove", move);
             "1499";
             scene.unbind("mousemove", shotspeed);
