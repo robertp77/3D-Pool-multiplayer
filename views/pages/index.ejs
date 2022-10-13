@@ -15,7 +15,7 @@
     
     // START JAVASCRIPT
     ;(function() {;
-    var peepe, scr, temp, remp, refr, nonsense, rofr, allowed, shotted, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
+    var peepe, scr, temp, remp, refr, nonsense, rofr, allowed, shotted, send, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
     async function __main__() {
     "use strict";
     
@@ -54,6 +54,7 @@
         opponent=null
         online2=false;
         allowed=true
+        send=false
         "21";
         rtbr = RS_interpolate_kwargs.call(this, extrusion, [RS_desugar_kwargs({path: RS_list_decorate([ vector(side["+"](.5["*"](thk)), side["-"](thk), 4["-u"]()["+"](.5["*"](thk))), vector(side["+"](.51["*"](thk)), side["-"](thk), 4["-u"]()["+"](.5["*"](thk))) ]), shape: RS_interpolate_kwargs.call(shapes, shapes.rectangle, [RS_desugar_kwargs({width: 3["*"](thk), height: 3["*"](thk)})]), color: color.white})]);
         "22";
@@ -1069,7 +1070,7 @@
         scene.center = ball.pos["+"](1.1["*"](norm(shooter.axis)));
         "418";
         async function move() {
-            var RS_ls, uvel1u, dus, un, dun, unk, x;
+            var RS_ls, uvel1u, dus, un, dun, unk, x,temp1;
             "419";
             "420";
             "421";
@@ -1079,89 +1080,90 @@
                 "424";
                 temp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: ball.pos})]);
                 "425";
-                if (mag(temp["-"](ball.pos))["<"](r)) {
-                    "426";
-                    ball.pos = temp;
-                    "427";
-                    pointer.pos = ball.pos;
-                    "428";
-                    var RS_Iter2 = range(0, len(balls)["-"](1));
-                    RS_Iter2 = ((typeof RS_Iter2[Symbol.iterator] === "function") ? (RS_Iter2 instanceof Map ? RS_Iter2.keys() : RS_Iter2) : Object.keys(RS_Iter2));
-                    for (var RS_Index2 of RS_Iter2) {
-                        x = RS_Index2;
-                        "429";
-                        if (mag(ball.pos["-"](balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]))["<"](2["*"](r))) {
-                            "430";
-                            uvel1u = norm(temp["-"](remp));
-                            "431";
-                            dus = balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ball.pos);
-                            "432";
-                            un = dus.x["*"](uvel1u.x)["+"](dus.y["*"](uvel1u.y))["+"](dus.z["*"](uvel1u.z));
-                            "433";
-                            dun = balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ball.pos)["-"](un["*"](uvel1u));
-                            "434";
-                            unk = Math.pow((Math.pow((2["*"](r)), 2)["-"](Math.pow(mag(dun), 2))), .5);
-                            "435";
-                            ball.pos = ball.pos["-"](uvel1u["*"](unk["-"](un))["*"](1.05));
-                            "436";
-                            pointer.pos = ball.pos;
-                            "437";
-                        }
-                    }
-                    if (scene.mouse.pos.x[">"](side["-"](.5["*"](thk))["-"](r))) {
-                        "438";
-                        ball.pos.x = scene.mouse.pos.x["-"](scene.mouse.pos.x["-"](side["-"](.5["*"](thk))["-"](r)));
-                        "439";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "440";
+                send=true
+                //if (mag(temp["-"](ball.pos))["<"](r)) {
+                "426";
+                ball.pos = temp;
+                "427";
+                pointer.pos = ball.pos;
+                "428";
+                var RS_Iter2 = range(0, len(balls)["-"](1));
+                RS_Iter2 = ((typeof RS_Iter2[Symbol.iterator] === "function") ? (RS_Iter2 instanceof Map ? RS_Iter2.keys() : RS_Iter2) : Object.keys(RS_Iter2));
+                for (var RS_Index2 of RS_Iter2) {
+                    x = RS_Index2;
+                    "429";
+                    if (mag(ball.pos["-"](balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]))["<"](2["*"](r))) {
+                        "430";
+                        uvel1u = norm(temp["-"](remp));
+                        "431";
+                        dus = balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ball.pos);
+                        "432";
+                        un = dus.x["*"](uvel1u.x)["+"](dus.y["*"](uvel1u.y))["+"](dus.z["*"](uvel1u.z));
+                        "433";
+                        dun = balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x]["-"](ball.pos)["-"](un["*"](uvel1u));
+                        "434";
+                        unk = Math.pow((Math.pow((2["*"](r)), 2)["-"](Math.pow(mag(dun), 2))), .5);
+                        "435";
+                        ball.pos = ball.pos["-"](uvel1u["*"](unk["-"](un))["*"](1.05));
+                        "436";
                         pointer.pos = ball.pos;
-                        "441";
-                    }
-                    if (scene.mouse.pos.x["<"](side["-"](.5["*"](thk))["-"](r)["-u"]())) {
-                        "442";
-                        ball.pos.x = scene.mouse.pos.x["+"](1["-u"]()["*"](scene.mouse.pos.x)["-"](side["-"](.5["*"](thk))["-"](r)));
-                        "443";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "444";
-                        pointer.pos = ball.pos;
-                        "445";
-                    }
-                    if (scene.mouse.pos.y[">"](side["-"](.5["*"](thk))["-"](r))) {
-                        "446";
-                        ball.pos.y = scene.mouse.pos.y["-"](scene.mouse.pos.y["-"](side["-"](.5["*"](thk))["-"](r)));
-                        "447";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "448";
-                        pointer.pos = ball.pos;
-                        "449";
-                    }
-                    if (scene.mouse.pos.y["<"](side["-"](.5["*"](thk))["-"](r)["-u"]())) {
-                        "450";
-                        ball.pos.y = scene.mouse.pos.y["+"](1["-u"]()["*"](scene.mouse.pos.y)["-"](side["-"](.5["*"](thk))["-"](r)));
-                        "451";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "452";
-                        pointer.pos = ball.pos;
-                        "453";
-                    }
-                    if (scene.mouse.pos.z[">"](4["-"](r))) {
-                        "454";
-                        ball.pos.z = scene.mouse.pos.z["-"](scene.mouse.pos.z["-"](4["-"](r)));
-                        "455";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "456";
-                        pointer.pos = ball.pos;
-                        "457";
-                    }
-                    if (scene.mouse.pos.z["<"](4["-"](r)["-u"]())) {
-                        "458";
-                        ball.pos.z = scene.mouse.pos.z["+"](1["-u"]()["*"](scene.mouse.pos.z)["-"](4["-"](r)));
-                        "459";
-                        balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
-                        "460";
-                        pointer.pos = ball.pos;
+                        "437";
                     }
                 }
+                if (scene.mouse.pos.x[">"](side["-"](.5["*"](thk))["-"](r))) {
+                    "438";
+                    ball.pos.x = scene.mouse.pos.x["-"](scene.mouse.pos.x["-"](side["-"](.5["*"](thk))["-"](r)));
+                    "439";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "440";
+                    pointer.pos = ball.pos;
+                    "441";
+                }
+                if (scene.mouse.pos.x["<"](side["-"](.5["*"](thk))["-"](r)["-u"]())) {
+                    "442";
+                    ball.pos.x = scene.mouse.pos.x["+"](1["-u"]()["*"](scene.mouse.pos.x)["-"](side["-"](.5["*"](thk))["-"](r)));
+                    "443";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "444";
+                    pointer.pos = ball.pos;
+                    "445";
+                }
+                if (scene.mouse.pos.y[">"](side["-"](.5["*"](thk))["-"](r))) {
+                    "446";
+                    ball.pos.y = scene.mouse.pos.y["-"](scene.mouse.pos.y["-"](side["-"](.5["*"](thk))["-"](r)));
+                    "447";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "448";
+                    pointer.pos = ball.pos;
+                    "449";
+                }
+                if (scene.mouse.pos.y["<"](side["-"](.5["*"](thk))["-"](r)["-u"]())) {
+                    "450";
+                    ball.pos.y = scene.mouse.pos.y["+"](1["-u"]()["*"](scene.mouse.pos.y)["-"](side["-"](.5["*"](thk))["-"](r)));
+                    "451";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "452";
+                    pointer.pos = ball.pos;
+                    "453";
+                }
+                if (scene.mouse.pos.z[">"](4["-"](r))) {
+                    "454";
+                    ball.pos.z = scene.mouse.pos.z["-"](scene.mouse.pos.z["-"](4["-"](r)));
+                    "455";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "456";
+                    pointer.pos = ball.pos;
+                    "457";
+                }
+                if (scene.mouse.pos.z["<"](4["-"](r)["-u"]())) {
+                    "458";
+                    ball.pos.z = scene.mouse.pos.z["+"](1["-u"]()["*"](scene.mouse.pos.z)["-"](4["-"](r)));
+                    "459";
+                    balls[RS_bound_index(len(balls)["-"](1), balls)] = ball.pos;
+                    "460";
+                    pointer.pos = ball.pos;
+                }
+                //}
             }
             "461";
             var RS_Iter3 = range(0, len(balls)["-"](1));
@@ -1205,14 +1207,17 @@
             "477";
             "478";
             "479";
+            /*
             if (allowed==true && (scr === 1 || typeof scr === "object" && RS_equals(scr, 1))) {
                 "480";
-                scene.bind("mousemove", move);
+                //scene.bind("mousemove", move);
                 "481";
             } else {
                 "482";
                 scene.unbind("mousemove", move);
             }
+            */
+            scene.unbind("mousemove", move);
             "483";
             "484";
             "485";
@@ -1237,8 +1242,10 @@
             "495";
             remp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: ball.pos})]);
             "496";
-            if (allowed && mag(temp["-"](ball.pos))["<"](r)) {
+            if (allowed && scr == 1 && mag(temp["-"](ball.pos))["<"](r)) {
                 "497";
+                scene.unbind("mousemove", aim);
+                scene.bind("mousemove", move);
                 nonsense = 5;
                 "498";
             } else if (allowed && mag(shooterdotcrox)["<"](shooter.radius) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
@@ -1501,6 +1508,7 @@
                 "618";
                 if (mag(shooterdotcrox)[">"](shooter.radius) && mag(wormcyldotcrox)[">"](wormcyl.radius) && (mag(freeviewdotcrox)[">"](freeview.radius) || mag(freeviewdist["-"](ucroxxshot["*"](.5)["*"](mag(freeview.axis))))[">"](mag(freeview.axis)["/"](2)))) {
                     "619";
+                    send=true
                     scene.center = vector(0, 0, 0);
                     "620";
                     mpcp = scene.mouse.pos["-"](scene.camera.pos);
@@ -1621,6 +1629,7 @@
                 "673";
                 if (mag(shooterdotcrox)[">"](shooter.radius) && mag(wormcyldotcrox)[">"](wormcyl.radius) && (mag(freeviewdotcrox)[">"](freeview.radius) || mag(freeviewdist["-"](ucroxxaim["*"](.5)["*"](mag(freeview.axis))))[">"](mag(freeview.axis)["/"](2))) && (peepe === 0 || typeof peepe === "object" && RS_equals(peepe, 0))) {
                     "674";
+                    send=true
                     mpcp = scene.mouse.pos["-"](scene.camera.pos);
                     "675";
                     rfcp = refr["-"](scene.camera.pos);
@@ -1672,6 +1681,7 @@
             "693";
             n = 0;
             "694";
+            send=true
             var RS_Iter5 = range(0, len(balls)["-"](1));
             RS_Iter5 = ((typeof RS_Iter5[Symbol.iterator] === "function") ? (RS_Iter5 instanceof Map ? RS_Iter5.keys() : RS_Iter5) : Object.keys(RS_Iter5));
             for (var RS_Index5 of RS_Iter5) {
@@ -1838,6 +1848,7 @@
                 "753";
                 temp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: wormbar.pos})]);
                 "754";
+                send=true
                 wormcyl.pos = wormbar.pos["+"](norm(wormbar.axis)["*"]((await (temp["-"](wormbar.pos)).dot(norm(wormbar.axis)))));
                 "755";
                 if (mag(wormcyl.pos["-"](wormbar.pos))[">"](mag(wormbar.axis))) {
@@ -1908,6 +1919,7 @@
                 "781";
                 if ((nonsense === 2 || typeof nonsense === "object" && RS_equals(nonsense, 2))) {
                     "782";
+                    send=true
                     temp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: wormcyl.pos})]);
                     "783";
                     wormcyl.pos = wormbar.pos["+"](norm(wormbar.axis)["*"]((await (temp["-"](wormbar.pos)).dot(norm(wormbar.axis)))));
@@ -8977,11 +8989,14 @@
             if(online2){
                 if(yourturn==true){
                     if(peepe==0){
-                        if(turn==1){
-                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
-                        }
-                        else{
-                            await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
+                        if(send){
+                            if(turn==1){
+                                await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer1.axis.x+'&wy='+pointer1.axis.y+'&wz='+pointer1.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+entry.pos.x+'&ey='+entry.pos.y+'&ez='+entry.pos.z+'&esx='+entry.size.x+'&esy='+entry.size.y+'&esz='+entry.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
+                            }
+                            else{
+                                await fetch('https://young-escarpment-72389.herokuapp.com/api/sendobs?pax='+pointer.axis.x+'&pay='+pointer.axis.y+'&paz='+pointer.axis.z+'&wx='+pointer2.axis.x+'&wy='+pointer2.axis.y+'&wz='+pointer2.axis.z+'&ax='+aimball.pos.x+'&ay='+aimball.pos.y+'&az='+aimball.pos.z+'&gx='+gravityball.pos.x+'&gy='+gravityball.pos.y+'&gz='+gravityball.pos.z+'&ex='+exit.pos.x+'&ey='+exit.pos.y+'&ez='+exit.pos.z+'&esx='+exit.size.x+'&esy='+exit.size.y+'&esz='+exit.size.z+'&bx='+ball.pos.x+'&by='+ball.pos.y+'&bz='+ball.pos.z+'&name='+name)
+                            }
+                            send=false
                         }
                     }
                     else if(shotted==false){
