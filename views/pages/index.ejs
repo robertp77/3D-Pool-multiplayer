@@ -4404,6 +4404,44 @@
                 for (var RS_Index47 of RS_Iter47) {
                     x = RS_Index47;
                     "1985";
+                    if (abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].x["-"](entry.pos.x))["<"](.5["*"](entry.size.x)) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].y["-"](entry.pos.y))["<"](.5["*"](entry.size.y)) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].z["-"](entry.pos.z))["<"](.5["*"](entry.size.z))) {
+                        "1942";
+                        vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x]=vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x]["+"](.001["*"](abs(wormpower))["*"](hat(pointer1.axis)));
+                        "1943";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].x = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].x);
+                        "1944";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].x = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].x["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].x["+"](1e-6));
+                        "1945";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].y = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].y);
+                        "1946";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].y = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].y["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].y["+"](1e-6));
+                        "1947";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].z = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].z);
+                        "1948";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].z = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].z["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].z["+"](1e-6));
+                        "1949";
+                        touchedgrav = 1;
+                        "1950";
+                    }
+                    if (abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].x["-"](exit.pos.x))["<"](.5["*"](exit.size.x)) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].y["-"](exit.pos.y))["<"](.5["*"](exit.size.y)) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].z["-"](entexitry.pos.z))["<"](.5["*"](exit.size.z))) {
+                        "1951";
+                        vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x]=vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x]["+"](.001["*"](abs(wormpowerr))["*"](hat(pointer2.axis)));
+                        "1952";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].x = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].x);
+                        "1953";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].x = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].x["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].x["+"](1e-6));
+                        "1954";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].y = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].y);
+                        "1955";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].y = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].y["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].y["+"](1e-6));
+                        "1956";
+                        speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].z = abs(vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].z);
+                        "1957";
+                        dirs[(typeof x === "number" && x["<"](0)) ? dirs.length["+"](x) : x].z = vels[(typeof x === "number" && x["<"](0)) ? vels.length["+"](x) : x].z["/"](speeds[(typeof x === "number" && x["<"](0)) ? speeds.length["+"](x) : x].z["+"](1e-6));
+                        "1958";
+                        touchedgrav = 1;
+                    }
+                    /*
                     if ((g === 1 || typeof g === "object" && RS_equals(g, 1))) {
                         "1986";
                         if (balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].x["<"](side["-u"]()["+"](.5["*"](thk))["+"](wormvector.x)) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].y["-"](wormy))["<"](thk) && abs(balls[(typeof x === "number" && x["<"](0)) ? balls.length["+"](x) : x].z["-"](wormz))["<"](thk)) {
@@ -4571,6 +4609,7 @@
                             touchedgrav = 1;
                         }
                     }
+                    */
                     "\n            if k==1:\n                if ((balls[x].x<-side+0.5*thk+gravector.x) and (abs(balls[x].y-randopos2)<thk) and (abs(balls[x].z-randopos3)<thk)):\n                    vels[x].x+=0.001*randopower1\n                    speeds[x].x=abs(vels[x].x)\n                    dirs[x].x=vels[x].x/(speeds[x].x+0.000001)\n                    touchedgrav=1\n            if k==2:\n                if ((balls[x].x>side-0.5*thk-gravector.x) and (abs(balls[x].y-randopos2)<thk) and (abs(balls[x].z-randopos3)<thk)):\n                    vels[x].x+=0.001*randopower1\n                    speeds[x].x=abs(vels[x].x)\n                    dirs[x].x=vels[x].x/(speeds[x].x+0.000001)\n                    touchedgrav=1\n            if k==3:\n                if ((balls[x].z>4-gravector.z) and (abs(balls[x].y-randopos2)<thk) and (abs(balls[x].x-randopos1)<thk)):\n                    vels[x].z+=0.001*randopower1\n                    speeds[x].z=abs(vels[x].z)\n                    touchedgrav=1\n                    dirs[x].z=vels[x].z/(speeds[x].z+0.000001)\n            if k==4:\n                if ((balls[x].z<-4+gravector.z) and (abs(balls[x].y-randopos2)<thk) and (abs(balls[x].x-randopos1)<thk)):\n                    vels[x].z+=0.001*randopower1\n                    speeds[x].z=abs(vels[x].z)\n                    dirs[x].z=vels[x].z/(speeds[x].z+0.000001)\n                    touchedgrav=1\n            if k==5:\n                if ((balls[x].y>side-0.5*thk-gravector.y) and (abs(balls[x].x-randopos1)<thk) and (abs(balls[x].z-randopos3)<thk)):\n                    vels[x].y+=0.001*randopower1\n                    speeds[x].y=abs(vels[x].y)\n                    dirs[x].y=vels[x].y/(speeds[x].y+0.000001)\n                    touchedgrav=1\n            if k==6:\n                if ((balls[x].y<-side+0.5*thk+gravector.y) and (abs(balls[x].x-randopos1)<thk) and (abs(balls[x].z-randopos3)<thk)):\n                    vels[x].y+=0.001*randopower1\n                    speeds[x].y=abs(vels[x].y)\n                    dirs[x].y=vels[x].y/(speeds[x].y+0.000001)\n                    touchedgrav=1\n            if kk==1:\n                if ((balls[x].x<-side+0.5*thk+gravectorr.x) and (abs(balls[x].y-randopos22)<thk) and (abs(balls[x].z-randopos33)<thk)):\n                    vels[x].x+=0.001*randopower2\n                    speeds[x].x=abs(vels[x].x)\n                    dirs[x].x=vels[x].x/(speeds[x].x+0.000001)\n                    touchedgrav=1\n            if kk==2:\n                if ((balls[x].x>side-0.5*thk-gravectorr.x) and (abs(balls[x].y-randopos22)<thk) and (abs(balls[x].z-randopos33)<thk)):\n                    vels[x].x+=0.001*randopower2\n                    speeds[x].x=abs(vels[x].x)\n                    dirs[x].x=vels[x].x/(speeds[x].x+0.000001)\n                    touchedgrav=1\n            if kk==3:\n                if ((balls[x].z>4-gravectorr.z) and (abs(balls[x].y-randopos22)<thk) and (abs(balls[x].x-randopos11)<thk)):\n                    vels[x].z+=0.001*randopower2\n                    speeds[x].z=abs(vels[x].z)\n                    dirs[x].z=vels[x].z/(speeds[x].z+0.000001)\n                    touchedgrav=1\n            if kk==4:\n                if ((balls[x].z<-4+gravectorr.z) and (abs(balls[x].y-randopos22)<thk) and (abs(balls[x].x-randopos11)<thk)):\n                    vels[x].z+=0.001*randopower2\n                    speeds[x].z=abs(vels[x].z)\n                    dirs[x].z=vels[x].z/(speeds[x].z+0.000001)\n                    touchedgrav=1\n            if kk==5:\n                if ((balls[x].y>side-0.5*thk-gravectorr.y) and (abs(balls[x].x-randopos11)<thk) and (abs(balls[x].z-randopos33)<thk)):\n                    vels[x].y+=0.001*randopower2\n                    speeds[x].y=abs(vels[x].y)\n                    dirs[x].y=vels[x].y/(speeds[x].y+0.000001)\n                    touchedgrav=1\n            if kk==6:\n                if ((balls[x].y<-side+0.5*thk+gravectorr.y) and (abs(balls[x].x-randopos11)<thk) and (abs(balls[x].z-randopos33)<thk)):\n                    vels[x].y+=0.001*randopower2\n                    speeds[x].y=abs(vels[x].y)\n                    dirs[x].y=vels[x].y/(speeds[x].y+0.000001)\n                    touchedgrav=1\n            ";
                 }
                 "2131";
