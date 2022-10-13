@@ -437,6 +437,9 @@
                     pointer1.axis.x=parseFloat(dat.wx)
                     pointer1.axis.y=parseFloat(dat.wy)
                     pointer1.axis.z=parseFloat(dat.wz)
+                    pointer1.pos.x=parseFloat(dat.ex)
+                    pointer1.pos.y=parseFloat(dat.ey)
+                    pointer1.pos.z=parseFloat(dat.ez)
                     entry.pos.x=parseFloat(dat.ex)
                     entry.pos.y=parseFloat(dat.ey)
                     entry.pos.z=parseFloat(dat.ez)
@@ -446,9 +449,12 @@
                     wormpower=mag(pointer1.axis)["/"](.2["/"](14))
                 }
                 else{
-                    pointer1.axis.x=parseFloat(dat.wx)
-                    pointer1.axis.y=parseFloat(dat.wy)
-                    pointer1.axis.z=parseFloat(dat.wz)
+                    pointer2.axis.x=parseFloat(dat.wx)
+                    pointer2.axis.y=parseFloat(dat.wy)
+                    pointer2.axis.z=parseFloat(dat.wz)
+                    pointer2.pos.x=parseFloat(dat.ex)
+                    pointer2.pos.y=parseFloat(dat.ey)
+                    pointer2.pos.z=parseFloat(dat.ez)
                     exit.pos.x=parseFloat(dat.ex)
                     exit.pos.y=parseFloat(dat.ey)
                     exit.pos.z=parseFloat(dat.ez)
@@ -3993,7 +3999,7 @@
                         t1 = clock();
                         "1737";
                         "1738";
-                        if(online2==false || yourturn==false){
+                        if(online2==false || (yourturn==false && (scr==1 || made==0))){
                             //scene.bind("mousemove", aim);
                             //scene.bind("mousedown", reff);
                             scene.bind("click", grav);
@@ -4001,7 +4007,7 @@
                             allowed=true
                             yourturn=true
                         }
-                        else{
+                        else if(yourturn==true && (scr==1 || made==0)){
                             console.log('done')
                             //scene.unbind("mousemove", aim);
                             //scene.unbind("mousedown", reff);
