@@ -3993,21 +3993,23 @@
                         "1737";
                         "1738";
                         if(online2==false || yourturn==false){
-                            scene.bind("mousemove", aim);
-                            scene.bind("mousedown", reff);
+                            //scene.bind("mousemove", aim);
+                            //scene.bind("mousedown", reff);
                             scene.bind("click", grav);
                             scene.bind("mousemove", point);
+                            allowed=true
                             yourturn=true
                         }
                         else{
                             console.log('done')
                             //scene.unbind("mousemove", aim);
-                            scene.unbind("mousedown", reff);
+                            //scene.unbind("mousedown", reff);
                             scene.unbind("click", grav);
                             //scene.unbind("mousemove", point);
                             await freevu()
                             shotted=false
                             yourturn=false
+                            allowed=false
                             //return await foo()
                         }
                         break;
