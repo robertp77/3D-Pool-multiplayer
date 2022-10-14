@@ -15,7 +15,7 @@
     
     // START JAVASCRIPT
     ;(function() {;
-    var peepe, scr, temp, remp, refr, nonsense, rofr, playing, allowed, shotted, send, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
+    var peepe, scr, temp, remp, refr, nonsense, rofr, playing, logged, allowed, shotted, send, roofr, vu, wormpower, yourturn, name, online2, opponent,wormpowerr, ucroxxshot, ucroxshot, rangee, ucroxaim, ucroxxaim, rang, t, g, gg, k, gravector, randopos2, randopos3, randopos1, kk, gravectorr, randopos22, randopos33, randopos11, wormvector, wormy, wormz, wormx, wormvectorr, wormyy, wormzz, wormxx, jump, turn, randopower1, randopower2, t1;
     async function __main__() {
     "use strict";
     
@@ -774,24 +774,43 @@
     
         "333";
         //(await newgame());
-        scene.range = 5;
+        scene.range = 3;
+        try{
+            name=await findname()
+            logged=true
+        }
+        catch(err){
+            logged=false
+        }
         login = RS_interpolate_kwargs.call(this, cylinder, [RS_desugar_kwargs({pos: vector(-1.5, 0, 0), axis: vector(3, 0, 0), radius: .3})]);
         playoff = RS_interpolate_kwargs.call(this, cylinder, [RS_desugar_kwargs({pos: vector(-1.5, -2, 0), axis: vector(3, 0, 0), radius: .3})]);
-        logint = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Login", align: "center", color: color.blue, pos: login.pos["+"](.3["*"](vec(0,-1,0)))["+"](vec(1.5,0,0))["-"](.3["*"](norm(scene.camera.axis))), height: .4})]);
-        "405";
-        logint.length = 1.5;
-        "406";
-        playofft = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Play Offline", align: "center", color: color.blue, pos: playoff.pos["+"](.3["*"](vec(0,-1,0)))["+"](vec(1.5,0,0))["-"](.3["*"](norm(scene.camera.axis))), height: .4})]);
+        if(logged){
+            logint = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Find Match", align: "center", color: color.blue, pos: login.pos["+"](vec(1.5,0,0))["-"](.3["*"](norm(scene.camera.axis))), height: .4})]);
+            "405";
+            logint.length = 1.5;
+            "406";
+        }
+        else{
+            logint = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Login", align: "center", color: color.blue, pos: login.pos["+"](vec(1.5,0,0))["-"](.3["*"](norm(scene.camera.axis))), height: .4})]);
+            "405";
+            logint.length = 1.5;
+            "406";
+        }
+        playofft = RS_interpolate_kwargs.call(this, text, [RS_desugar_kwargs({text: "Play Offline", align: "center", color: color.blue, pos: playoff.pos["+"](vec(1.5,0,0))["-"](.3["*"](norm(scene.camera.axis))), height: .4})]);
         "407";
-        playofft.length = 1.5;
+        playofft.length = 2.5;
         "334";
-        name=await findname()
         console.log(name)
         async function home(){
             temp = RS_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [RS_desugar_kwargs({normal: scene.camera.axis, point: login.pos})]);
             if(0<temp.x-login.x<3){
                 if(abs(login.y-temp.y)<0.5){
-                    window.location.href="https://young-escarpment-72389.herokuapp.com/api/auth/login"
+                    if(logged){
+                        await newgame(true)
+                    }
+                    else{
+                        window.location.href="https://young-escarpment-72389.herokuapp.com/api/auth/login"
+                    }
                 }
                 else if(abs(playoff.y-temp.y)<0.5){
                     await newgame()
